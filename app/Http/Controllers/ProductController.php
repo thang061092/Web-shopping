@@ -42,10 +42,24 @@ class ProductController extends Controller
     public function filterCategory(Request $request)
     {
         $category = $request->category;
-        $products = Product::where('category_id', $category)->get();
+        $products = Product::where('category_id', $category)->paginate(5);
         $categories = $this->categoryService->getAll();
         return view('products.list', compact('products', 'categories'));
     }
+
+    public function shop()
+    {
+        $products = $this->productService->all();
+        $categories = $this->categoryService->getAll();
+        return view('shopping.list', compact('products', 'categories'));
+    }
+
+    public function show($id)
+    {
+        $product = $this->productService->findById($id);
+        return view('shopping.detail', compact('product'));
+    }
+
 
 
 }

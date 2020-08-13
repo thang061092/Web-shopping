@@ -37,6 +37,15 @@ class ProductService
         }
         $product->save();
         $this->productRepo->save($product);
+    }
 
+    public function findById($id)
+    {
+        return $this->productRepo->findById($id);
+    }
+
+    public function all()
+    {
+        return $this->productRepo->all();
     }
 }

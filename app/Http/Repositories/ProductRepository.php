@@ -17,7 +17,7 @@ class ProductRepository
 
     public function getAll()
     {
-        return $this->productModel->all();
+        return $this->productModel->paginate(5);
     }
 
     public function save($product)
@@ -34,5 +34,11 @@ class ProductRepository
     {
         $product->delete();
     }
+
+    public function all()
+    {
+        return $this->productModel->all();
+    }
+
 
 }

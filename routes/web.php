@@ -13,14 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home.master');
-});
+
+Route::get('/', 'ProductController@shop')->name('products.shop');
+Route::get('/show/{id}', 'ProductController@show')->name('products.show');
+Route::get('/cart/{id}', 'CartController@addCart')->name('carts.add');
+Route::get('/cart-show', 'CartController@showCart')->name('carts.show');
+Route::get('/cart-destroy/{id}', 'CartController@destroyIdCart')->name('carts.destroy');
 
 Route::prefix('products')->group(function () {
     Route::get('/', 'ProductController@index')->name('products.index');
     Route::get('/create', 'ProductController@create')->name('products.create');
     Route::post('/create', 'ProductController@store')->name('products.store');
-    Route::post('/filter', 'ProductController@filterCategory')->name('products.filter');
+    Route::get('/filter', 'ProductController@filterCategory')->name('products.filter');
+
 });
 

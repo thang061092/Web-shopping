@@ -9,7 +9,7 @@
                 <li class="breadcrumb-item active">Danh sách</li>
             </ol>
         </div>
-        <form action="{{route('products.filter')}}" method="post" >
+        <form action="{{route('products.filter')}}" method="get">
             @csrf
             <div class="col-12 col-md-12 pt-3">
                 <div class="row">
@@ -44,10 +44,10 @@
                         <th>{{++$key}}</th>
                         <td>{{$product->name}}</td>
                         <td>{{number_format($product->price)}}</td>
-                        <td>{!! $product->desc !!}</td>
+                        <td>{!! \Illuminate\Support\Str::limit($product->desc,300,' ......') !!}</td>
                         <td>{{$product->quantity}}</td>
                         <td>
-                            <img src="{{asset('storage/'.$product->image)}}" style="width: 250px;height: 250px">
+                            <img src="{{asset('storage/'.$product->image)}}" style="width: 200px;height: 200px">
                         </td>
                         <td>
                             <a class="btn btn-primary" href=""><i class="fas fa-edit"></i></a>
@@ -59,6 +59,7 @@
                 @endforeach
                 </tbody>
             </table>
+            {{ $products->appends(request()->query())}}
         </div>
 
     </div>
