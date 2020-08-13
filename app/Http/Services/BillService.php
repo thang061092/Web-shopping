@@ -15,4 +15,14 @@ class BillService
         $this->billRepo = $billRepo;
     }
 
+    public function getAll()
+    {
+        return $this->billRepo->getAll();
+    }
+
+    public function findById($id)
+    {
+        return $this->billRepo->findById($id);
+    }
+
 }

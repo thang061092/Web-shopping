@@ -23,9 +23,15 @@ class CartController extends Controller
     public function addCart($id)
     {
         $product = $this->productService->findById($id);
-        Cart::add(['id' => $product->id, 'name' => $product->name, 'qty' => 1, 'price' => $product->price, 'weight' => 0, 'options' => ['image' => $product->image, 'desc' => $product->desc]]);
-        toastr()->success('Thêm sản phẩm vào giỏ hàng thành công ');
-        return back();
+        if ($product->quantity !== 0) {
+            Cart::add(['id' => $product->id, 'name' => $product->name, 'qty' => 1, 'price' => $product->price, 'weight' => 0, 'options' => ['image' => $product->image, 'desc' => $product->desc]]);
+            toastr()->success('Thêm sản phẩm vào giỏ hàng thành công ');
+            return back();
+        } else {
+            toastr()->success('Quý khách thông cảm, Sản phẩm hiện đang hết hàng');
+            return back();
+        }
+
     }
 
     public function destroyIdCart($id)

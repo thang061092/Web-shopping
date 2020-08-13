@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bill extends Model
 {
-    public function products()
+    public function details()
     {
-        return $this->belongsToMany('App\Product', 'details', 'bill_id', 'product_id');
+        return $this->hasMany('App\Detail');
     }
 
     public function customer()

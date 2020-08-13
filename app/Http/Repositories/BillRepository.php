@@ -17,7 +17,7 @@ class BillRepository
 
     public function getAll()
     {
-        return $this->billMode->all();
+        return $this->billMode->paginate(5);
     }
 
     public function save($bill)
@@ -27,7 +27,7 @@ class BillRepository
 
     public function findById($id)
     {
-        return $this->billMode->findOrFaid($id);
+        return $this->billMode->findOrFail($id);
     }
 
     public function destroy($bill)

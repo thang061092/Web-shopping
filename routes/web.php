@@ -22,12 +22,19 @@ Route::get('/cart-destroy/{id}', 'CartController@destroyIdCart')->name('carts.de
 Route::get('/cart-checkout', 'CartController@checkoutCart')->name('carts.checkout');
 Route::post('cart-payment', 'BillController@payment')->name('carts.payment');
 Route::get('cart-update/{id}', 'CartController@updateCart')->name('carts.update');
+Route::get('/search', 'ProductController@searchHome')->name('products.search');
 
 Route::prefix('products')->group(function () {
     Route::get('/', 'ProductController@index')->name('products.index');
     Route::get('/create', 'ProductController@create')->name('products.create');
     Route::post('/create', 'ProductController@store')->name('products.store');
     Route::get('/filter', 'ProductController@filterCategory')->name('products.filter');
+    Route::get('/search-product', 'ProductController@searchProduct')->name('products.searchProduct');
+});
 
+Route::prefix('bills')->group(function () {
+    Route::get('/', 'BillController@index')->name('bills.index');
+    Route::get('/show-bill/{id}', 'BillController@show')->name('bills.show');
+    Route::get('/update-bill/{id}', 'BillController@update')->name('bills.update');
 });
 

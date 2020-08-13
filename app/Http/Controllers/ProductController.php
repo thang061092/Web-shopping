@@ -60,6 +60,20 @@ class ProductController extends Controller
         return view('shopping.detail', compact('product'));
     }
 
+    public function searchHome(Request $request)
+    {
+        $keyword = $request->search;
+        $products = Product::where('name', 'LIKE', '%' . $keyword . '%')->paginate(5);
+        return view('shopping.search', compact('products'));
+    }
+
+    public function searchProduct(Request $request)
+    {
+        $categories = $this->categoryService->getAll();
+        $keyword = $request->searchProduct;
+        $products = Product::where('name', 'LIKE', '%' . $keyword . '%')->paginate(5);
+        return view('products.list', compact('products','categories'));
+    }
 
 
 }
