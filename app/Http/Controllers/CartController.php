@@ -24,12 +24,28 @@ class CartController extends Controller
     {
         $product = $this->productService->findById($id);
         Cart::add(['id' => $product->id, 'name' => $product->name, 'qty' => 1, 'price' => $product->price, 'weight' => 0, 'options' => ['image' => $product->image, 'desc' => $product->desc]]);
+        toastr()->success('Thêm sản phẩm vào giỏ hàng thành công ');
         return back();
     }
 
     public function destroyIdCart($id)
     {
         Cart::remove($id);
+        toastr()->success('Xóa sản phẩm thành công ');
         return redirect()->route('carts.show');
     }
+
+    public function checkoutCart()
+    {
+        return view('shopping.checkout');
+    }
+
+    public function updateCart(Request $request, $id)
+    {
+        $quantity = $request->qty;
+        Cart::update($id, $quantity);
+        toastr()->success('Thay đổi số lượng sản phẩm thành công ');
+        return redirect()->route('carts.show');
+    }
+
 }

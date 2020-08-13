@@ -15,7 +15,7 @@ class CreateBillsTable extends Migration
     {
         Schema::create('bills', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('totalPrice');
+            $table->longText('totalPrice');
             $table->longText('note');
             $table->string('status');
             $table->unsignedBigInteger('customer_id');

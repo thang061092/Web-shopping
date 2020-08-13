@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Essence - Fashion Ecommerce Template</title>
-    <base href="{{asset('')}}">
     <link rel="icon" href="{{asset('img/core-img/favicon.ico')}}">
 
     <!-- Core Style CSS -->
@@ -15,6 +14,8 @@
     <link rel="stylesheet" href="{{asset('style.css')}}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
           integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <title>Toastr.js</title>
+    @toastr_css
 </head>
 
 <body>
@@ -224,7 +225,12 @@
 <script src="{{asset('js/classy-nav.min.js')}}"></script>
 <!-- Active js -->
 <script src="{{asset('js/active.js')}}"></script>
-
+<script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace( 'editor' );
+</script>
 </body>
-
+@jquery
+@toastr_js
+@toastr_render
 </html>

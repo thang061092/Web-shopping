@@ -19,6 +19,9 @@ Route::get('/show/{id}', 'ProductController@show')->name('products.show');
 Route::get('/cart/{id}', 'CartController@addCart')->name('carts.add');
 Route::get('/cart-show', 'CartController@showCart')->name('carts.show');
 Route::get('/cart-destroy/{id}', 'CartController@destroyIdCart')->name('carts.destroy');
+Route::get('/cart-checkout', 'CartController@checkoutCart')->name('carts.checkout');
+Route::post('cart-payment', 'BillController@payment')->name('carts.payment');
+Route::get('cart-update/{id}', 'CartController@updateCart')->name('carts.update');
 
 Route::prefix('products')->group(function () {
     Route::get('/', 'ProductController@index')->name('products.index');
