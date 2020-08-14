@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Detail;
+use App\Http\Requests\FormBillRequest;
 use App\Http\Services\BillService;
 use App\Http\Services\CustomerService;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -20,7 +21,7 @@ class BillController extends Controller
         $this->billService = $billService;
     }
 
-    public function payment(Request $request)
+    public function payment(FormBillRequest $request)
     {
         $this->payment->create($request);
         toastr()->success('Đơn hàng của bạn đang được xử lý ');
