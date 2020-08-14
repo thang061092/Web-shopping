@@ -1,5 +1,13 @@
 @extends('admin.layout')
 @section('content')
+    @if($errors->all())
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Error! </strong> Thao tac them moi khong thanh cong!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
     <div class="card">
         <div class="card-header">
             <ol class="breadcrumb mb-1 mt-1">
@@ -15,19 +23,31 @@
                 @csrf
                 <div class="form-group">
                     <label>Tên sản phẩm: </label>
-                    <input type="text" class="form-control" name="name">
+                    <input type="text"  class="form-control @if($errors->has('name'))border border-danger @endif" name="name">
+                    @if($errors->has('name'))
+                        <p class="text-danger">{{ $errors->first('name') }}</p>
+                    @endif
                 </div>
                 <div class="form-group">
                     <label>Giá sản phẩm:</label>
-                    <input type="number" class="form-control" name="price">
+                    <input type="number" class="form-control  @if($errors->has('price'))border border-danger @endif" name="price">
+                    @if($errors->has('price'))
+                        <p class="text-danger">{{ $errors->first('price') }}</p>
+                    @endif
                 </div>
                 <div class="form-group">
                     <label>Số lượng:</label>
-                    <input type="number" class="form-control" name="quantity">
+                    <input type="number" class="form-control  @if($errors->has('quantity'))border border-danger @endif" name="quantity">
+                    @if($errors->has('quantity'))
+                        <p class="text-danger">{{ $errors->first('quantity') }}</p>
+                    @endif
                 </div>
                 <div class="form-group">
                     <label>Mô tả:</label>
-                    <textarea class="form-control" id="editor" rows="4" name="desc"></textarea>
+                    <textarea class="form-control @if($errors->has('desc'))border border-danger @endif" id="editor" rows="4" name="desc"></textarea>
+                    @if($errors->has('desc'))
+                        <p class="text-danger">{{ $errors->first('desc') }}</p>
+                    @endif
                 </div>
                 <div class="form-group">
                     <label>Loại sản phẩm:</label>
@@ -40,7 +60,10 @@
                 </div>
                 <div class="form-group">
                     <label>Hình ảnh:</label>
-                    <input type="file" class="form-control" name="image">
+                    <input type="file" class="form-control @if($errors->has('image'))border border-danger @endif" name="image">
+                    @if($errors->has('image'))
+                        <p class="text-danger">{{ $errors->first('image') }}</p>
+                    @endif
                 </div>
                 <div>
                     <button type="submit" class="btn btn-primary">Thêm mới</button>
