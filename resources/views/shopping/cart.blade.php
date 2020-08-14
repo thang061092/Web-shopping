@@ -56,10 +56,10 @@
             <div class="col mb-2">
                 <div class="row">
                     <div class="col-sm-12  col-md-6">
-                        <a class="btn btn-block btn-primary" href="{{route('products.shop')}}">Continue Shopping</a>
+                        <a class="btn btn-block btn-primary" href="{{route('products.shop')}}">Tiếp tục mua hàng</a>
                     </div>
                     <div class="col-sm-12 col-md-6 ">
-                        <a class="btn btn-block btn-success" href="{{route('carts.checkout')}}">Checkout</a>
+                        <a class="btn btn-block btn-success" href="{{route('carts.checkout')}}">Thủ tục thanh toán</a>
                     </div>
                 </div>
             </div>

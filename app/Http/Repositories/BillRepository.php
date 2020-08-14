@@ -17,7 +17,7 @@ class BillRepository
 
     public function getAll()
     {
-        return $this->billMode->paginate(5);
+        return $this->billMode->paginate(10);
     }
 
     public function save($bill)

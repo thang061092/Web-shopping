@@ -44,14 +44,14 @@
                 </div>
                 <div class="form-group">
                     <label>Mô tả:</label>
-                    <textarea class="form-control @if($errors->has('desc'))border border-danger @endif" value="{{old('desc')}}" id="editor" rows="4" name="desc"></textarea>
+                    <textarea class="form-control @if($errors->has('desc'))border border-danger @endif"  id="editor" rows="4" name="desc">{{old('desc')}}</textarea>
                     @if($errors->has('desc'))
                         <p class="text-danger">{{ $errors->first('desc') }}</p>
                     @endif
                 </div>
                 <div class="form-group">
                     <label>Loại sản phẩm:</label>
-                    <select class="form-control" name="cate">
+                    <select class="form-control" name="cate" >
                         <option value="">Chọn loại sản phẩm:</option>
                         @foreach($categories as $key => $category)
                             <option value="{{$category->id}}">{{$category->name}}</option>

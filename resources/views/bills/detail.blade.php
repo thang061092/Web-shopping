@@ -69,7 +69,7 @@
                         @elseif($bill->status == \App\Http\Controllers\Major::CANCEL)
                             <td>{{\App\Http\Controllers\Major::CANCEL}}</td>
                         @else
-                            <td><select name="status" class="form-control" onchange="this.form.submit()">
+                            <td><select name="status" class="form-control">
                                     <option @if($bill->status == \App\Http\Controllers\Major::WAITING)
                                             selected
                                         @endif>
@@ -94,19 +94,23 @@
                             </td>
                         @endif
                     </tr>
+                    <tr>
+                        <td><a class="btn btn-secondary" href="{{route('bills.index')}}">Quay lại</a></td>
+                        <td>
+                            <button class="btn btn-primary @if($bill->status == \App\Http\Controllers\Major::FINISH)
+                                d-none
+                                @elseif($bill->status == \App\Http\Controllers\Major::CANCEL)
+                                d-none
+                                @else
+                                d-inline
+                                @endif" type="submit">Xác nhận
+                            </button>
+                        </td>
+                    </tr>
                 </form>
-                <tr>
-                    <th><a class="btn btn-secondary" href="{{route('bills.index')}}">Quay lại</a></th>
-                </tr>
             </table>
-
         </div>
-
     </div>
-
-
-
-
 @endsection
 
 

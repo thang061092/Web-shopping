@@ -18,7 +18,6 @@
                     <th scope="col">Tổng tiền</th>
                     <th scope="col">Ghi chú</th>
                     <th scope="col">Trạng thái</th>
-                    <th scope="col"></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -31,13 +30,10 @@
                     @foreach($bills as $key => $bill)
                         <tr>
                             <th>{{++$key}}</th>
-                            <td>{{$bill->customer->name}}</td>
+                            <td><a href="{{route('bills.show',$bill->id)}}">{{$bill->customer->name}}</a></td>
                             <td>{{$bill->totalPrice}}</td>
                             <td>{!! $bill->note !!}</td>
                             <td>{{$bill->status}}</td>
-                            <td><a class="btn btn-success text-white" href="{{route('bills.show',$bill->id)}}">
-                                    Chi tiết
-                                </a></td>
                         </tr>
                     @endforeach
                 @endif
