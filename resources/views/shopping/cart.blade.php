@@ -22,13 +22,13 @@
                                     <td><img src="{{asset('storage/'.$item->options->image)}}"
                                              style="width: 200px;height: 150px"/></td>
                                     <td>{{$item->name}}</td>
-                                    <form method="get" action="{{route('carts.update',[$item->rowId,$item->id])}}">
-                                        @csrf
-                                        <td><input class="form-control" type="number" name="qty"
-                                                   value="{{number_format($item->qty)}}" onchange="this.form.submit()"/></td>
-                                    </form>
+{{--                                    <form method="get" action="{{route('carts.update',[$item->rowId,$item->id])}}">--}}
+{{--                                        @csrf--}}
+                                        <td><input min="1" class="form-control update-product-cart" type="number" name="qty" data-rowId="{{ $item->rowId }}"
+                                           data-id="{{$item->id}}"        value="{{number_format($item->qty)}}" /></td>
+{{--                                    </form>--}}
                                     <td class="text-right">{{number_format($item->price)}} VND</td>
-                                    <td class="text-right">{{number_format($item->price * $item->qty)}} VND</td>
+                                    <td class="text-right" id="product-subtotal-{{$item->id}}">{{number_format($item->price * $item->qty)}} VND</td>
                                     <td><a class="btn btn-danger" href="{{route('carts.destroy',$item->rowId)}}"><i
                                                 class="fa fa-trash-alt"></i> </a></td>
                                 </tr>
@@ -39,7 +39,7 @@
                                 <td></td>
                                 <td></td>
                                 <td><strong>Tổng : </strong></td>
-                                <td class="text-right"><strong>{{\Gloudemans\Shoppingcart\Facades\Cart::subtotal()}}
+                                <td class="text-right " id="total-price-cart"><strong>{{\Gloudemans\Shoppingcart\Facades\Cart::subtotal()}}
                                         VND</strong></td>
                             </tr>
                             </tbody>

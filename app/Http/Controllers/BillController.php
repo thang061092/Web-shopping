@@ -23,7 +23,7 @@ class BillController extends Controller
     public function payment(Request $request)
     {
         $this->payment->create($request);
-        toastr()->success('Đặt hàng thành công ');
+        toastr()->success('Đơn hàng của bạn đang được xử lý ');
         Cart::destroy();
         return redirect()->route('products.shop');
     }

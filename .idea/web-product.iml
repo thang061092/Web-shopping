@@ -120,5 +120,6 @@
     <orderEntry type="library" name="buttons" level="application" />
     <orderEntry type="library" name="ckeditor" level="application" />
     <orderEntry type="library" name="all" level="application" />
+    <orderEntry type="library" name="jquery" level="application" />
   </component>
 </module>

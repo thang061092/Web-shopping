@@ -50,15 +50,20 @@ class CartController extends Controller
     {
         $product = $this->productService->findById($id);
         $quantity = $request->qty;
-
         if ($quantity <= $product->quantity) {
             Cart::update($rowId, $quantity);
             toastr()->success('Thay đổi số lượng sản phẩm thành công ');
-            return redirect()->route('carts.show');
+//            return redirect()->route('carts.show');
         } else {
             toastr()->success("Sản phẩm còn tồn $product->quantity , quý khách thông cảm");
-            return redirect()->route('carts.show');
+//            return redirect()->route('carts.show');
         }
+        $data = [
+            'item' => Cart::get($rowId),
+            'total' => Cart::subtotal(),
+            'totalProduct' => (Cart::get($rowId)->qty) * (Cart::get($rowId)->price)
+        ];
+        return response()->json($data);
 
     }
 

@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="{{asset('style.css')}}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
           integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{asset('js/jquery/my.js')}}"></script>
+
     <title>Toastr.js</title>
     @toastr_css
 </head>
@@ -62,7 +65,7 @@
             </div>
             <div class="cart-area">
                 <a href="{{route('carts.show')}}" class="text-danger"><i class="fas fa-shopping-cart"></i>
-                    ({{\Gloudemans\Shoppingcart\Facades\Cart::count()}})</a>
+                    ({{\Gloudemans\Shoppingcart\Facades\Cart::content()->count()}})</a>
             </div>
             <div class="user-login-info">
                 <a href="#"><i class="fas fa-user"></i></a>
