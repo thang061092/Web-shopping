@@ -22,28 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea4dedc1-6e89-4ef2-be74-67f3218f3896" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/web-product.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/web-product.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/jquery/my.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/jquery/my.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/bills/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/bills/detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/shopping/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shopping/cart.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/shopping/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shopping/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="ea4dedc1-6e89-4ef2-be74-67f3218f3896" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -229,6 +208,7 @@
       <workItem from="1597325080297" duration="7076000" />
       <workItem from="1597332168330" duration="5083000" />
       <workItem from="1597367567917" duration="14798000" />
+      <workItem from="1597387789717" duration="2844000" />
     </task>
     <servers />
   </component>
