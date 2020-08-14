@@ -23,28 +23,28 @@
                 @csrf
                 <div class="form-group">
                     <label>Tên sản phẩm: </label>
-                    <input type="text"  class="form-control @if($errors->has('name'))border border-danger @endif" name="name">
+                    <input type="text"  class="form-control @if($errors->has('name'))border border-danger @endif" value="{{old('name')}}" name="name">
                     @if($errors->has('name'))
                         <p class="text-danger">{{ $errors->first('name') }}</p>
                     @endif
                 </div>
                 <div class="form-group">
                     <label>Giá sản phẩm:</label>
-                    <input type="number" class="form-control  @if($errors->has('price'))border border-danger @endif" name="price">
+                    <input type="number" class="form-control  @if($errors->has('price'))border border-danger @endif" value="{{old('price')}}" name="price">
                     @if($errors->has('price'))
                         <p class="text-danger">{{ $errors->first('price') }}</p>
                     @endif
                 </div>
                 <div class="form-group">
                     <label>Số lượng:</label>
-                    <input type="number" class="form-control  @if($errors->has('quantity'))border border-danger @endif" name="quantity">
+                    <input type="number" class="form-control  @if($errors->has('quantity'))border border-danger @endif" value="{{old('quantity')}}" name="quantity">
                     @if($errors->has('quantity'))
                         <p class="text-danger">{{ $errors->first('quantity') }}</p>
                     @endif
                 </div>
                 <div class="form-group">
                     <label>Mô tả:</label>
-                    <textarea class="form-control @if($errors->has('desc'))border border-danger @endif" id="editor" rows="4" name="desc"></textarea>
+                    <textarea class="form-control @if($errors->has('desc'))border border-danger @endif" value="{{old('desc')}}" id="editor" rows="4" name="desc"></textarea>
                     @if($errors->has('desc'))
                         <p class="text-danger">{{ $errors->first('desc') }}</p>
                     @endif
