@@ -45,11 +45,6 @@
             </table>
             {{ $bills->appends(request()->query())}}
         </div>
-
     </div>
-
-
-
-
 @endsection
 

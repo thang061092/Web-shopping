@@ -48,8 +48,8 @@
                         @foreach($products as $key => $product)
                             <div class="single-product-wrapper">
                                 <div class="product-img">
-                                    <img src="{{asset('storage/'.$product->image)}}" alt="" style="height: 220px">
-                                    <img class="hover-img" src="{{asset('storage/'.$product->image)}}" alt="">
+                                    <img src="{{asset('storage/'.$product->image)}}" alt="" style="width: 200px; height: 150px">
+                                    <img class="hover-img" src="{{asset('storage/'.$product->image)}}" alt="" style="width: 200px">
                                 </div>
                                 <div class="product-description">
                                     <span>{{$product->category->name}}</span>

@@ -54,6 +54,7 @@ class BillController extends Controller
                 $detail->product->save();
             }
         }
+        toastr()->success('Xác nhận giao dịch thành công ');
         return back();
 
     }

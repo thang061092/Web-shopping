@@ -50,7 +50,7 @@
                             <img src="{{asset('storage/'.$product->image)}}" style="width: 150px;height: 120px">
                         </td>
                         <td>
-                            <a class="btn btn-primary" href=""><i class="fas fa-edit"></i></a>
+                            <a class="btn btn-primary" href="{{route('products.edit',$product->id)}}"><i class="fas fa-edit"></i></a>
                         </td>
                         <td>
                             <a class="btn btn-danger" href=""><i class="fas fa-trash"></i> </a>

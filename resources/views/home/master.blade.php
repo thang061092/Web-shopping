@@ -107,8 +107,8 @@
             <div class="col-12 col-md-6">
                 <div class="single_widget_area">
                     <div class="footer_social_area">
-                        <label class="text-white">Gửi thông tin cho chúng tôi</label>
-                        <input type="email" class=" form-control">
+                        <label class="text-white">Đăng kí nhận thông tin</label>
+                        <input type="email" class=" form-control" placeholder="Nhập email ">
                     </div>
                 </div>
             </div>

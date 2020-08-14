@@ -41,7 +41,8 @@
                     <th>#</th>
                     <th>Sản phẩm</th>
                     <th>Giá tiền</th>
-                    <th>Số lượng</th>
+                    <th>Đặt mua</th>
+                    <th>Tồn kho</th>
                     <th>Hình ảnh</th>
                 </tr>
                 </thead>
@@ -51,6 +52,7 @@
                         <td>{{\Illuminate\Support\Str::limit($detail->product->name,30)}}</td>
                         <td><span class="text-danger">{{number_format($detail->product->price)}}/sản phẩm</span></td>
                         <td>{{$detail->quantityProduct}}</td>
+                        <td>{{$detail->product->quantity}}</td>
                         <td><img src="{{asset('storage/'.$detail->product->image)}}" style="width: 100px"></td>
                     </tr>
                 @endforeach

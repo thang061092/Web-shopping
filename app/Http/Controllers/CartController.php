@@ -46,12 +46,20 @@ class CartController extends Controller
         return view('shopping.checkout');
     }
 
-    public function updateCart(Request $request, $id)
+    public function updateCart(Request $request, $rowId, $id)
     {
+        $product = $this->productService->findById($id);
         $quantity = $request->qty;
-        Cart::update($id, $quantity);
-        toastr()->success('Thay đổi số lượng sản phẩm thành công ');
-        return redirect()->route('carts.show');
+
+        if ($quantity <= $product->quantity) {
+            Cart::update($rowId, $quantity);
+            toastr()->success('Thay đổi số lượng sản phẩm thành công ');
+            return redirect()->route('carts.show');
+        } else {
+            toastr()->success("Sản phẩm còn tồn $product->quantity , quý khách thông cảm");
+            return redirect()->route('carts.show');
+        }
+
     }
 
 }

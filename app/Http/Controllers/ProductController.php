@@ -72,8 +72,21 @@ class ProductController extends Controller
         $categories = $this->categoryService->getAll();
         $keyword = $request->searchProduct;
         $products = Product::where('name', 'LIKE', '%' . $keyword . '%')->paginate(5);
-        return view('products.list', compact('products','categories'));
+        return view('products.list', compact('products', 'categories'));
     }
 
+    public function edit($id)
+    {
+        $product = $this->productService->findById($id);
+        $categories = $this->categoryService->getAll();
+        return view('products.edit', compact('product', 'categories'));
+    }
 
+    public function update(Request $request, $id)
+    {
+        $product = $this->productService->findById($id);
+        $this->productService->update($product, $request);
+        toastr()->success('Cập nhật thành công ');
+        return redirect()->route('products.index');
+    }
 }

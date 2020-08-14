@@ -22,7 +22,7 @@
                                     <td><img src="{{asset('storage/'.$item->options->image)}}"
                                              style="width: 200px;height: 150px"/></td>
                                     <td>{{$item->name}}</td>
-                                    <form method="get" action="{{route('carts.update',$item->rowId)}}">
+                                    <form method="get" action="{{route('carts.update',[$item->rowId,$item->id])}}">
                                         @csrf
                                         <td><input class="form-control" type="number" name="qty"
                                                    value="{{number_format($item->qty)}}" onchange="this.form.submit()"/></td>

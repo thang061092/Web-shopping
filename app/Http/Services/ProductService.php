@@ -6,6 +6,7 @@ namespace App\Http\Services;
 
 use App\Http\Repositories\ProductRepository;
 use App\Product;
+use Illuminate\Support\Facades\Storage;
 
 
 class ProductService
@@ -47,6 +48,25 @@ class ProductService
     public function all()
     {
         return $this->productRepo->all();
+    }
+
+    public function update($product, $request)
+    {
+        $product->name = $request->name;
+        $product->desc = $request->desc;
+        $product->price = $request->price;
+        $product->quantity = $request->quantity;
+        $product->category_id = $request->cate;
+        if ($request->hasFile('image')) {
+            $currentImg = $product->image;
+            if ($currentImg) {
+                Storage::delete('/public/' . $currentImg);
+            }
+            $image = $request->file('image');
+            $path = $image->store('images', 'public');
+            $product->image = $path;
+        }
+        $this->productRepo->save($product);
     }
 
 }
