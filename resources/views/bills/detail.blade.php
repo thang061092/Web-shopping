@@ -66,6 +66,8 @@
                         <th>Xác nhận đơn hàng:</th>
                         @if($bill->status == \App\Http\Controllers\Major::FINISH)
                             <td>{{\App\Http\Controllers\Major::FINISH}}</td>
+                        @elseif($bill->status == \App\Http\Controllers\Major::CANCEL)
+                            <td>{{\App\Http\Controllers\Major::CANCEL}}</td>
                         @else
                             <td><select name="status" class="form-control" onchange="this.form.submit()">
                                     <option @if($bill->status == \App\Http\Controllers\Major::WAITING)
@@ -78,15 +80,15 @@
                                         @endif>
                                         {{\App\Http\Controllers\Major::SHIPPING}}
                                     </option>
-                                    <option @if($bill->status == \App\Http\Controllers\Major::FINISH )
-                                            selected
-                                        @endif>
-                                        {{\App\Http\Controllers\Major::FINISH}}
-                                    </option>
                                     <option @if($bill->status == \App\Http\Controllers\Major::CANCEL )
                                             selected
                                         @endif>
                                         {{\App\Http\Controllers\Major::CANCEL}}
+                                    </option>
+                                    <option @if($bill->status == \App\Http\Controllers\Major::FINISH )
+                                            selected
+                                        @endif>
+                                        {{\App\Http\Controllers\Major::FINISH}}
                                     </option>
                                 </select>
                             </td>

@@ -1,13 +1,11 @@
 $(document).ready(function () {
+    let origin = location.origin;
     $('.update-product-cart').change(function () {
         let qtyNew = $(this).val();
         let rowId = $(this).attr('data-rowId');
-        console.log(rowId)
         let id = $(this).attr('data-id');
-        console.log(id)
-        let origin = location.origin;
         $.ajax({
-            url: origin + '/cart-update/' + rowId + '/' + id,
+            url: origin + '/cart-update/' + rowId,
             method: 'GET',
             data: {
                 qty: qtyNew,
@@ -19,5 +17,6 @@ $(document).ready(function () {
                 $('#total-price-cart').html('<strong>' + result.total.toLocaleString() + ' VNĐ' + '</strong>')
             }
         })
-    })
+    });
+
 })

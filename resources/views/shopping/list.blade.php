@@ -63,7 +63,7 @@
                                     </div>
                                     <div class="hover-content">
                                         <div class="add-to-cart-btn">
-                                            <a href="{{route('carts.add',$product->id)}}" class="btn essence-btn">Thêm
+                                            <a href="{{route('carts.add',$product->id)}}" class="btn essence-btn add-cart">Thêm
                                                 vào giỏ hàng</a>
                                         </div>
                                     </div>

@@ -106,6 +106,7 @@
       <path value="$PROJECT_DIR$/vendor/yoeunes/toastr" />
       <path value="$PROJECT_DIR$/vendor/bumbummen99/shoppingcart" />
       <path value="$PROJECT_DIR$/vendor/melihovv/laravel-shopping-cart" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />
