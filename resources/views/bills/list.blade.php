@@ -9,6 +9,21 @@
                 <li class="breadcrumb-item active">Danh sách hóa đơn</li>
             </ol>
         </div>
+        <form action="{{route('bills.status')}}" method="get">
+            @csrf
+            <div class="col-12 col-md-12 pt-3">
+                <div class="row">
+                    <div class="col-12 col-md-2 ml-2">
+                        <select name="status" class="form-control" onchange="this.form.submit()">
+                            <option value="">Bộ lọc</option>
+                            @foreach($statuses as $key => $status)
+                                <option value="{{$status}}">{{$status}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </form>
         <div class="card-body">
             <table class="table table-striped">
                 <thead class="table-dark">

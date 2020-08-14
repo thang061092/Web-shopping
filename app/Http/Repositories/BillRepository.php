@@ -8,16 +8,16 @@ use App\Bill;
 
 class BillRepository
 {
-    protected $billMode;
+    protected $billModel;
 
-    public function __construct(Bill $billMode)
+    public function __construct(Bill $billModel)
     {
-        $this->billMode = $billMode;
+        $this->billModel = $billModel;
     }
 
     public function getAll()
     {
-        return $this->billMode->paginate(10);
+        return $this->billModel->paginate(10);
     }
 
     public function save($bill)
@@ -27,11 +27,16 @@ class BillRepository
 
     public function findById($id)
     {
-        return $this->billMode->findOrFail($id);
+        return $this->billModel->findOrFail($id);
     }
 
     public function destroy($bill)
     {
         $bill->delete();
+    }
+
+    public function fitterStatus($status)
+    {
+        return $this->billModel->where('status', $status)->paginate(10);
     }
 }

@@ -31,8 +31,9 @@ class BillController extends Controller
 
     public function index()
     {
+        $statuses = Major::STATUSES;
         $bills = $this->billService->getAll();
-        return view('bills.list', compact('bills'));
+        return view('bills.list', compact('bills', 'statuses'));
     }
 
     public function show($id)
@@ -45,5 +46,12 @@ class BillController extends Controller
     public function update(Request $request, $id)
     {
         return $this->billService->update($request, $id);
+    }
+
+    public function fitterStatus(Request $request)
+    {
+        $statuses = Major::STATUSES;
+        $bills = $this->billService->fitterStatus($request);
+        return view('bills.list', compact('bills', 'statuses'));
     }
 }

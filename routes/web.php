@@ -46,6 +46,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/', 'BillController@index')->name('bills.index');
         Route::get('/show-bill/{id}', 'BillController@show')->name('bills.show');
         Route::get('/update-bill/{id}', 'BillController@update')->name('bills.update');
+        Route::get('/fitter-status', 'BillController@fitterStatus')->name('bills.status');
     });
 
 });

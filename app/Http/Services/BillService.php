@@ -61,4 +61,10 @@ class BillService
             return back();
         }
     }
+
+    public function fitterStatus($request)
+    {
+        $status = $request->status;
+        return $this->billRepo->fitterStatus($status);
+    }
 }
