@@ -28,7 +28,7 @@ class CartController extends Controller
             toastr()->success('Thêm sản phẩm vào giỏ hàng thành công ');
             return back();
         } else {
-            toastr()->success('Quý khách thông cảm, Sản phẩm hiện đang hết hàng');
+            toastr()->error('Quý khách thông cảm, Sản phẩm hiện đang hết hàng');
             return back();
         }
 

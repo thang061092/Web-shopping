@@ -19,4 +19,14 @@ class DetailRepository
     {
         $detail->save();
     }
+
+    public function findById($id)
+    {
+        return $this->detailModel->findOrFail($id);
+    }
+
+    public function find($id)
+    {
+        return $this->detailModel->where('bill_id', $id)->get();
+    }
 }

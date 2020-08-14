@@ -5,6 +5,7 @@ namespace App\Http\Repositories;
 
 
 use App\Product;
+use phpDocumentor\Reflection\Types\This;
 
 class ProductRepository
 {
@@ -35,10 +36,29 @@ class ProductRepository
         $product->delete();
     }
 
-    public function all()
+    public function allDesc()
     {
-        return $this->productModel->all();
+        return $this->productModel->orderBy('created_at', 'DESC')->get();
     }
 
+    public function allAsc()
+    {
+        return $this->productModel->orderBy('created_at', 'ASC')->get();
+    }
+
+    public function searchProduct($keyword)
+    {
+        return $this->productModel->where('name', 'LIKE', '%' . $keyword . '%')->paginate(5);
+    }
+
+    public function searchHome($keyword)
+    {
+        return $this->productModel->where('name', 'LIKE', '%' . $keyword . '%')->paginate(5);
+    }
+
+    public function filterCategory($category)
+    {
+        return $this->productModel->where('category_id', $category)->paginate(5);
+    }
 
 }

@@ -6,7 +6,7 @@
                 <li class="breadcrumb-item active">
                     <a href="{{route('products.index')}}">Home</a>
                 </li>
-                <li class="breadcrumb-item active"><a href="{{route('products.index')}}">Danh sách</a></li>
+                <li class="breadcrumb-item active"><a href="{{route('products.index')}}">Danh sách sản phẩm</a></li>
                 <li class="breadcrumb-item active">Cập nhật thông tin sản phẩm</li>
             </ol>
         </div>

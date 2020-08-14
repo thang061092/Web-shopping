@@ -45,9 +45,9 @@ class ProductService
         return $this->productRepo->findById($id);
     }
 
-    public function all()
+    public function allDesc()
     {
-        return $this->productRepo->all();
+        return $this->productRepo->allDesc();
     }
 
     public function update($product, $request)
@@ -69,4 +69,26 @@ class ProductService
         $this->productRepo->save($product);
     }
 
+    public function allAsc()
+    {
+        return $this->productRepo->allAsc();
+    }
+
+    public function searchProduct($request)
+    {
+        $keyword = $request->searchProduct;
+        return $this->productRepo->searchProduct($keyword);
+    }
+
+    public function searchHome($request)
+    {
+        $keyword = $request->search;
+        return $this->productRepo->searchHome($keyword);
+    }
+
+    public function filterCategory($request)
+    {
+        $category = $request->category;
+        return $this->productRepo->filterCategory($category);
+    }
 }

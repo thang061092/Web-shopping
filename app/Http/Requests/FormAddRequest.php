@@ -28,6 +28,7 @@ class FormAddRequest extends FormRequest
             'price'=>'required|numeric',
             'quantity'=>'required|numeric|min:1',
             'desc'=>'required',
+            'cate'=>'required',
             'image'=>'required'
         ];
     }
@@ -42,7 +43,8 @@ class FormAddRequest extends FormRequest
             'quantity.required'=>'Số lượng sản phẩm không được để trống',
             'quantity.numeric'=>'Số lượng sản phẩm phải là số',
             'desc.required'=>'Mô tả sản phẩm không được để trống',
-            'image.required'=>'ảnh sản phẩm không được để trống'
+            'image.required'=>'Ảnh sản phẩm không được để trống',
+            'cate.required'=>'Sản phẩm chưa được phân loại'
         ];
 
     }

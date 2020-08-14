@@ -45,11 +45,13 @@
                 <div class="col-12">
                     <div class="popular-products-slides owl-carousel">
 
-                        @foreach($products as $key => $product)
+                        @foreach($products1 as $key => $product)
                             <div class="single-product-wrapper">
                                 <div class="product-img">
-                                    <img src="{{asset('storage/'.$product->image)}}" alt="" style="width: 200px; height: 150px">
-                                    <img class="hover-img" src="{{asset('storage/'.$product->image)}}" alt="" style="width: 200px">
+                                    <img src="{{asset('storage/'.$product->image)}}" alt=""
+                                         style="width: 200px; height: 150px">
+                                    <img class="hover-img" src="{{asset('storage/'.$product->image)}}" alt=""
+                                         style="width: 200px">
                                 </div>
                                 <div class="product-description">
                                     <span>{{$product->category->name}}</span>
@@ -58,12 +60,56 @@
                                     </a>
                                     <h6 class="product-price">Giá tiền: <p
                                             class="text-danger">{{number_format($product->price)}} VND </p></h6>
-                                    <div class="{{$product->quantity==0 ? 'd-inline' : 'd-none'}}">
-                                        <h6 class="text-primary">Hết hàng</h6>
+                                    <div>
+                                        @if($product->quantity == 0)
+                                            <h6 class="text-primary">Hết hàng</h6>
+                                        @else
+                                            <h6 class="text-primary">Còn hàng</h6>
+                                        @endif
                                     </div>
                                     <div class="hover-content">
                                         <div class="add-to-cart-btn">
-                                            <a href="{{route('carts.add',$product->id)}}" class="btn essence-btn add-cart">Thêm
+                                            <a href="{{route('carts.add',$product->id)}}"
+                                               class="btn essence-btn add-cart">Thêm
+                                                vào giỏ hàng</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="popular-products-slides owl-carousel">
+
+                        @foreach($products2 as $key => $product)
+                            <div class="single-product-wrapper">
+                                <div class="product-img">
+                                    <img src="{{asset('storage/'.$product->image)}}" alt=""
+                                         style="width: 200px; height: 150px">
+                                    <img class="hover-img" src="{{asset('storage/'.$product->image)}}" alt=""
+                                         style="width: 200px">
+                                </div>
+                                <div class="product-description">
+                                    <span>{{$product->category->name}}</span>
+                                    <a href="{{route('products.show',$product->id)}}" class="link">
+                                        <h6>{{$product->name}} <p class="text-success">->Xem chi tiết</p></h6>
+                                    </a>
+                                    <h6 class="product-price">Giá tiền: <p
+                                            class="text-danger">{{number_format($product->price)}} VND </p></h6>
+                                    <div>
+                                        @if($product->quantity == 0)
+                                            <h6 class="text-secondary">Hết hàng</h6>
+                                        @else
+                                            <h6 class="text-primary">Còn hàng</h6>
+                                        @endif
+                                    </div>
+                                    <div class="hover-content">
+                                        <div class="add-to-cart-btn">
+                                            <a href="{{route('carts.add',$product->id)}}"
+                                               class="btn essence-btn add-cart">Thêm
                                                 vào giỏ hàng</a>
                                         </div>
                                     </div>
@@ -75,7 +121,6 @@
             </div>
         </div>
     </section>
-
     <div class="brands-area d-flex align-items-center justify-content-between">
         @foreach($categories as $category)
             <div class="single-brands-logo">
@@ -83,5 +128,4 @@
             </div>
         @endforeach
     </div>
-
 @endsection

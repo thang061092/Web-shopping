@@ -14,7 +14,7 @@
                 <li class="breadcrumb-item active">
                     <a href="{{route('products.index')}}">Home</a>
                 </li>
-                <li class="breadcrumb-item active"><a href="{{route('products.index')}}">Danh sách</a></li>
+                <li class="breadcrumb-item active"><a href="{{route('products.index')}}">Danh sách sản phẩm</a></li>
                 <li class="breadcrumb-item active">Thêm mới</li>
             </ol>
         </div>
@@ -51,12 +51,15 @@
                 </div>
                 <div class="form-group">
                     <label>Loại sản phẩm:</label>
-                    <select class="form-control" name="cate" >
+                    <select class="form-control @if($errors->has('cate'))border border-danger @endif" name="cate" >
                         <option value="">Chọn loại sản phẩm:</option>
                         @foreach($categories as $key => $category)
                             <option value="{{$category->id}}">{{$category->name}}</option>
                         @endforeach
                     </select>
+                    @if($errors->has('cate'))
+                        <p class="text-danger">{{ $errors->first('cate') }}</p>
+                    @endif
                 </div>
                 <div class="form-group">
                     <label>Hình ảnh:</label>

@@ -6,7 +6,7 @@
                 <li class="breadcrumb-item active">
                     <a href="{{route('products.index')}}">Home</a>
                 </li>
-                <li class="breadcrumb-item active">Danh sách</li>
+                <li class="breadcrumb-item active">Danh sách sản phẩm</li>
             </ol>
         </div>
         <form action="{{route('products.filter')}}" method="get">
@@ -50,7 +50,8 @@
                             <img src="{{asset('storage/'.$product->image)}}" style="width: 150px;height: 120px">
                         </td>
                         <td>
-                            <a class="btn btn-primary" href="{{route('products.edit',$product->id)}}"><i class="fas fa-edit"></i></a>
+                            <a class="btn btn-primary" href="{{route('products.edit',$product->id)}}"><i
+                                    class="fas fa-edit"></i></a>
                         </td>
                         <td>
                             <a class="btn btn-danger" href=""><i class="fas fa-trash"></i> </a>
@@ -59,6 +60,16 @@
                 @endforeach
                 </tbody>
             </table>
+{{--            <div class="col-md-12 pt-5">--}}
+{{--                <div class="row">--}}
+{{--                    <div class="col-md-10">--}}
+
+{{--                    </div>--}}
+{{--                    <div class="col-md-1 ml-4">--}}
+{{--                        {{ $products->appends(request()->query())}}--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
             {{ $products->appends(request()->query())}}
         </div>
 

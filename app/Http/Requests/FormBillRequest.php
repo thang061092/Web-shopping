@@ -26,7 +26,7 @@ class FormBillRequest extends FormRequest
         return [
             'name'=>'required',
             'phone'=>'required|numeric',
-            'email'=>'required|email|unique:customers,email',
+            'email'=>'required|email',
             'address'=>'required'
         ];
     }
@@ -34,11 +34,11 @@ class FormBillRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required'=>'Quý Khách không được bỏ trống ô này',
-            'phone.required'=>'Quý Khách không được bỏ trống ô này',
-            'phone.numeric'=>'Số điệm thoại phải là số',
+            'name.required'=>'Tên không được bỏ trống ô này',
+            'phone.required'=>'Số điện thoại không được bỏ trống ô này',
+            'phone.numeric'=>'Số điện thoại phải là số',
             'email.required'=>'Quý khách không được bỏ trống ô này',
-            'email.unique'=>'Email đã được sử dụng',
+            'email.email'=>'Email không đúng đinh dạng',
             'address.required'=>'Quý khách không được bỏ trống ô này'
         ];
     }

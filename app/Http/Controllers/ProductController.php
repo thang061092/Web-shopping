@@ -42,17 +42,17 @@ class ProductController extends Controller
 
     public function filterCategory(Request $request)
     {
-        $category = $request->category;
-        $products = Product::where('category_id', $category)->paginate(5);
+        $products = $this->productService->filterCategory($request);
         $categories = $this->categoryService->getAll();
         return view('products.list', compact('products', 'categories'));
     }
 
     public function shop()
     {
-        $products = $this->productService->all();
+        $products1 = $this->productService->allDesc();
+        $products2 = $this->productService->allAsc();
         $categories = $this->categoryService->getAll();
-        return view('shopping.list', compact('products', 'categories'));
+        return view('shopping.list', compact('products1', 'categories', 'products2'));
     }
 
     public function show($id)
@@ -63,16 +63,14 @@ class ProductController extends Controller
 
     public function searchHome(Request $request)
     {
-        $keyword = $request->search;
-        $products = Product::where('name', 'LIKE', '%' . $keyword . '%')->paginate(5);
+        $products = $this->productService->searchHome($request);
         return view('shopping.search', compact('products'));
     }
 
     public function searchProduct(Request $request)
     {
         $categories = $this->categoryService->getAll();
-        $keyword = $request->searchProduct;
-        $products = Product::where('name', 'LIKE', '%' . $keyword . '%')->paginate(5);
+        $products = $this->productService->searchProduct($request);
         return view('products.list', compact('products', 'categories'));
     }
 
@@ -90,4 +88,5 @@ class ProductController extends Controller
         toastr()->success('Cập nhật thành công ');
         return redirect()->route('products.index');
     }
+
 }

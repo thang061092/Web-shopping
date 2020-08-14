@@ -44,32 +44,6 @@ class BillController extends Controller
 
     public function update(Request $request, $id)
     {
-        $bill = $this->billService->findById($id);
-        $bill->status = $request->status;
-        if ($bill->status == Major::FINISH) {
-            $details = Detail::where('bill_id', $id)->get();
-            $sumProductBill = 0;
-            $sumProduct = 0;
-            foreach ($details as $detail) {
-                $sumProductBill += $detail->quantityProduct;
-                $sumProduct += $detail->product->quantity;
-            }
-            foreach ($details as $detail) {
-                if ($sumProductBill <= $sumProduct) {
-                    $detail->product->quantity = ($detail->product->quantity) - ($detail->quantityProduct);
-                    $detail->product->save();
-                    $bill->save();
-                } else {
-                    toastr()->error('Số lượng sản phẩm đặt hàng và số lượng tồn kho không khớp, vui lòng kiểm tra lại ');
-                    return back();
-                }
-            }
-        } else {
-            $bill->save();
-            toastr()->success('Xác nhận giao dịch thành công ');
-            return back();
-        }
-
-
+        return $this->billService->update($request, $id);
     }
 }
