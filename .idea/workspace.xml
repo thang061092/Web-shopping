@@ -22,7 +22,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea4dedc1-6e89-4ef2-be74-67f3218f3896" name="Default Changelist" comment="" />
+    <list default="true" id="ea4dedc1-6e89-4ef2-be74-67f3218f3896" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/shopping/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shopping/checkout.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -207,8 +210,8 @@
       <workItem from="1597316594848" duration="2595000" />
       <workItem from="1597325080297" duration="7076000" />
       <workItem from="1597332168330" duration="5083000" />
-      <workItem from="1597367567917" duration="14798000" />
-      <workItem from="1597387789717" duration="2844000" />
+      <workItem from="1597367567917" duration="15222000" />
+      <workItem from="1597395369461" duration="1026000" />
     </task>
     <servers />
   </component>

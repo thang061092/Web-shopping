@@ -57,7 +57,7 @@
 
                                 </div>
                                 <div  class="col-12 mb-3" >
-                                    <button type="submit" class="btn btn-primary">Thanh toán</button>
+                                    <button type="submit" class="btn btn-primary">Đặt hàng</button>
                                     <a href="{{route('products.shop')}}" class="btn btn-secondary">Quay lại</a>
                                 </div>
 
