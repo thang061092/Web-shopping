@@ -23,23 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea4dedc1-6e89-4ef2-be74-67f3218f3896" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/shopping/category-show-product.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/asaawqq.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/hnhhn.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/tttt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/yhyh.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BillController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BillController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Repositories/BillRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repositories/BillRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Services/BillService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Services/BillService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Services/CategoryService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Services/CategoryService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Services/DetailService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Services/DetailService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/jquery/my.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/jquery/my.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/bills/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/bills/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/products/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/products/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/list.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/shopping/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shopping/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/shopping/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shopping/search.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,7 +216,7 @@
       <workItem from="1597332168330" duration="5083000" />
       <workItem from="1597367567917" duration="15222000" />
       <workItem from="1597395369461" duration="14742000" />
-      <workItem from="1597455177254" duration="9336000" />
+      <workItem from="1597455177254" duration="10774000" />
     </task>
     <servers />
   </component>

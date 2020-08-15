@@ -1,34 +1,48 @@
 @extends('home.master')
 @section('description')
     <div class="top_catagory_area section-padding-80 clearfix">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row justify-content-center">
-                <div class="col-12 col-sm-6 col-md-4">
-                    <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
-                         style="background-image: url({{asset('wew.jpg')}});">
-                        <div class="catagory-content">
-                            <a href="#">Tủ Lạnh</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4">
-                    <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
-                         style="background-image: url({{asset('ujju.jpg')}});">
-                        <div class="catagory-content">
-                            <a href="#">Laptop</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4">
+                <div class="col-12 col-sm-6 col-md-2">
                     <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
                          style="background-image: url({{asset('adsqw.jpeg')}});">
-                        <div class="catagory-content">
-                            <a href="#">Điện Thoại</a>
-                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-2">
+                    <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
+                         style="background-image: url({{asset('ujju.jpg')}});">
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-2">
+                    <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
+                         style="background-image: url({{asset('yhyh.jpg')}});">
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-2">
+                    <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
+                         style="background-image: url({{asset('tttt.png')}});">
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-2">
+                    <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
+                         style="background-image: url({{asset('hnhhn.jpg')}});">
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-2">
+                    <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
+                         style="background-image: url({{asset('asaawqq.jpg')}});">
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="brands-area d-flex align-items-center justify-content-between">
+        @foreach($categories as $category)
+            <div class="single-brands-logo ">
+                <a href="{{route('categories.show',$category->id)}}" class="btn btn-link "><h4>{{$category->name}}</h4>
+                </a>
+            </div>
+        @endforeach
     </div>
     <section class="new_arrivals_area section-padding-80 clearfix">
         <div class="container-fluid">
@@ -121,11 +135,40 @@
             </div>
         </div>
     </section>
-    <div class="brands-area d-flex align-items-center justify-content-between">
-        @foreach($categories as $category)
-            <div class="single-brands-logo ">
-                <a href="{{route('categories.show',$category->id)}}" class="btn btn-link "><h4>{{$category->name}}</h4></a>
+    <div class="top_catagory_area section-padding-80 clearfix">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-6 col-md-2">
+                    <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
+                         style="background-image: url({{asset('adsqw.jpeg')}});">
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-2">
+                    <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
+                         style="background-image: url({{asset('tttt.png')}});">
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-2">
+                    <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
+                         style="background-image: url({{asset('asaawqq.jpg')}});">
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-2">
+                    <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
+                         style="background-image: url({{asset('ujju.jpg')}});">
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-2">
+                    <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
+                         style="background-image: url({{asset('hnhhn.jpg')}});">
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-2">
+                    <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
+                         style="background-image: url({{asset('yhyh.jpg')}});">
+                    </div>
+                </div>
             </div>
-        @endforeach
+        </div>
     </div>
 @endsection
