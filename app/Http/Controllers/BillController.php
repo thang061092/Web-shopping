@@ -6,6 +6,7 @@ use App\Detail;
 use App\Http\Requests\FormBillRequest;
 use App\Http\Services\BillService;
 use App\Http\Services\CustomerService;
+use App\Http\Services\DetailService;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 
@@ -13,12 +14,15 @@ class BillController extends Controller
 {
     protected $payment;
     protected $billService;
+    protected $detailService;
 
     public function __construct(CustomerService $customerService,
-                                BillService $billService)
+                                BillService $billService,
+                                DetailService $detailService)
     {
         $this->payment = $customerService;
         $this->billService = $billService;
+        $this->detailService = $detailService;
     }
 
     public function payment(FormBillRequest $request)
@@ -39,7 +43,7 @@ class BillController extends Controller
     public function show($id)
     {
         $bill = $this->billService->findById($id);
-        $details = Detail::where('bill_id', $id)->get();
+        $details = $this->detailService->find($id);
         return view('bills.detail', compact('bill', 'details'));
     }
 

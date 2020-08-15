@@ -17,7 +17,7 @@ class BillRepository
 
     public function getAll()
     {
-        return $this->billModel->paginate(10);
+        return $this->billModel->orderBy('created_at','DESC')->paginate(10);
     }
 
     public function save($bill)

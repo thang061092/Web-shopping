@@ -24,7 +24,16 @@ class CartController extends Controller
     {
         $product = $this->productService->findById($id);
         if ($product->quantity !== 0) {
-            Cart::add(['id' => $product->id, 'name' => $product->name, 'qty' => 1, 'price' => $product->price, 'weight' => 0, 'options' => ['image' => $product->image, 'desc' => $product->desc]]);
+            Cart::add(['id' => $product->id,
+                'name' => $product->name,
+                'qty' => 1,
+                'price' => $product->price,
+                'weight' => 0,
+                'options' => ['image' => $product->image,
+                              'desc' => $product->desc,
+                              'quantityProduct' => $product->quantity
+                ],
+            ]);
             toastr()->success('Thêm sản phẩm vào giỏ hàng thành công ');
             return back();
         } else {
@@ -54,7 +63,8 @@ class CartController extends Controller
         $data = [
             'item' => Cart::get($rowId),
             'total' => Cart::subtotal(),
-            'totalProduct' => (Cart::get($rowId)->qty) * (Cart::get($rowId)->price)
+            'totalProduct' => (Cart::get($rowId)->qty) * (Cart::get($rowId)->price),
+            'quantityProduct'=> Cart::get($rowId)->options->quantityProduct
         ];
         return response()->json($data);
 

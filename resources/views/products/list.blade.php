@@ -39,37 +39,45 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($products as $key => $product)
+                @if(count($products)==0)
                     <tr>
-                        <th>{{++$key}}</th>
-                        <td>{{$product->name}}</td>
-                        <td>{{number_format($product->price)}}</td>
-                        <td>{!! \Illuminate\Support\Str::limit($product->desc,300,' ......') !!}</td>
-                        <td>{{$product->quantity}}</td>
                         <td>
-                            <img src="{{asset('storage/'.$product->image)}}" style="width: 150px;height: 120px">
-                        </td>
-                        <td>
-                            <a class="btn btn-primary" href="{{route('products.edit',$product->id)}}"><i
-                                    class="fas fa-edit"></i></a>
-                        </td>
-                        <td>
-                            <a class="btn btn-danger" href=""><i class="fas fa-trash"></i> </a>
+                            Không có dữ liệu
                         </td>
                     </tr>
-                @endforeach
+                @else
+                    @foreach($products as $key => $product)
+                        <tr>
+                            <th>{{++$key}}</th>
+                            <td>{{$product->name}}</td>
+                            <td>{{number_format($product->price)}}</td>
+                            <td>{!! \Illuminate\Support\Str::limit($product->desc,300,' ......') !!}</td>
+                            <td>{{$product->quantity}}</td>
+                            <td>
+                                <img src="{{asset('storage/'.$product->image)}}" style="width: 150px;height: 120px">
+                            </td>
+                            <td>
+                                <a class="btn btn-primary" href="{{route('products.edit',$product->id)}}"><i
+                                        class="fas fa-edit"></i></a>
+                            </td>
+                            <td>
+                                <a class="btn btn-danger" href=""><i class="fas fa-trash"></i> </a>
+                            </td>
+                        </tr>
+                    @endforeach
+                @endif
                 </tbody>
             </table>
-{{--            <div class="col-md-12 pt-5">--}}
-{{--                <div class="row">--}}
-{{--                    <div class="col-md-10">--}}
+            {{--            <div class="col-md-12 pt-5">--}}
+            {{--                <div class="row">--}}
+            {{--                    <div class="col-md-10">--}}
 
-{{--                    </div>--}}
-{{--                    <div class="col-md-1 ml-4">--}}
-{{--                        {{ $products->appends(request()->query())}}--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
+            {{--                    </div>--}}
+            {{--                    <div class="col-md-1 ml-4">--}}
+            {{--                        {{ $products->appends(request()->query())}}--}}
+            {{--                    </div>--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
             {{ $products->appends(request()->query())}}
         </div>
 

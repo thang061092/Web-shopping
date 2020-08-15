@@ -15,7 +15,7 @@
                     <a href="{{route('products.index')}}">Home</a>
                 </li>
                 <li class="breadcrumb-item active"><a href="{{route('products.index')}}">Danh sách sản phẩm</a></li>
-                <li class="breadcrumb-item active">Thêm mới</li>
+                <li class="breadcrumb-item active">Thêm mới sản phẩm </li>
             </ol>
         </div>
         <div class="card-body pt-3">

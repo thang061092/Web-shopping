@@ -14,4 +14,9 @@ class DetailService
     {
         $this->detailRepo = $detailRepo;
     }
+
+    public function find($id)
+    {
+         return $this->detailRepo->find($id);
+    }
 }

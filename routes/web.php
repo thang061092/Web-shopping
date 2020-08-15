@@ -25,6 +25,7 @@ Route::prefix('/')->group(function () {
     Route::post('cart-payment', 'BillController@payment')->name('carts.payment');
     Route::get('cart-update/{rowId}', 'CartController@updateCart')->name('carts.update');
     Route::get('/search', 'ProductController@searchHome')->name('products.search');
+    Route::get('/category-show/{id}','CategoryController@show')->name('categories.show');
 
 });
 Auth::routes();

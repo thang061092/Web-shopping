@@ -60,7 +60,7 @@
             <div class="search-area">
                 <form action="{{route('products.search')}}" method="get">
                     @csrf
-                    <input type="search" name="search"  placeholder="Tìm kiếm sản phẩm" onchange="this.form.submit()">
+                    <input type="search" name="search"  placeholder="Tìm kiếm" onchange="this.form.submit()">
                 </form>
             </div>
             <div class="cart-area">

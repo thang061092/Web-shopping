@@ -33,6 +33,7 @@
                     <th scope="col">Tổng tiền</th>
                     <th scope="col">Ghi chú</th>
                     <th scope="col">Trạng thái</th>
+                    <th scope="col">Thời gian tạo </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -49,6 +50,7 @@
                             <td>{{$bill->totalPrice}}</td>
                             <td>{!! $bill->note !!}</td>
                             <td>{{$bill->status}}</td>
+                            <td>{{$bill->created_at}}</td>
                         </tr>
                     @endforeach
                 @endif

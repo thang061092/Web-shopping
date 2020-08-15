@@ -40,8 +40,8 @@
                 @endif
                 </tbody>
             </table>
-
-            {{ $products->appends(request()->query())}}
+            <a class="btn btn-secondary" href="{{route('products.shop')}}">Quay lại trang chủ</a>
+            {{--            {{ $products->appends(request()->query())}}--}}
 
 
         </div>
@@ -49,3 +49,4 @@
     </div>
 
 @endsection
+

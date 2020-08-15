@@ -15,7 +15,7 @@ $(document).ready(function () {
                 console.log(result)
                 $('#product-subtotal-' + id).html(result.totalProduct.toLocaleString() + ' VNĐ')
                 $('#total-price-cart').html('<strong>' + result.total.toLocaleString() + ' VNĐ' + '</strong>')
-            }
+            },
         })
     });
 

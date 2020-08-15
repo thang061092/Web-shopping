@@ -43,17 +43,17 @@ class BillService
                 $sumProductBill += $detail->quantityProduct;
                 $sumProduct += $detail->product->quantity;
             }
-            foreach ($details as $detail) {
-                if ($sumProductBill <= $sumProduct) {
+            if ($sumProductBill <= $sumProduct) {
+                foreach ($details as $detail) {
                     $detail->product->quantity = ($detail->product->quantity) - ($detail->quantityProduct);
                     $this->detailRepo->save($detail->product);
                     $this->billRepo->save($bill);
-                    toastr()->success('Xác nhận giao dịch thành công ');
-                    return back();
-                } else {
-                    toastr()->error('Số lượng sản phẩm đặt hàng và số lượng tồn kho không khớp, vui lòng kiểm tra lại ');
-                    return back();
                 }
+                toastr()->success('Xác nhận giao dịch thành công ');
+                return back();
+            } else {
+                toastr()->error('Số lượng sản phẩm đặt hàng và số lượng tồn kho không khớp, vui lòng kiểm tra lại ');
+                return back();
             }
         } else {
             $this->billRepo->save($bill);

@@ -123,8 +123,8 @@
     </section>
     <div class="brands-area d-flex align-items-center justify-content-between">
         @foreach($categories as $category)
-            <div class="single-brands-logo">
-                <h4>{{$category->name}}</h4>
+            <div class="single-brands-logo ">
+                <a href="{{route('categories.show',$category->id)}}" class="btn btn-link "><h4>{{$category->name}}</h4></a>
             </div>
         @endforeach
     </div>
