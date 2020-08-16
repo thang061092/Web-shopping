@@ -17,7 +17,7 @@ class CustomerRepository
 
     public function getAll()
     {
-        return $this->customerModel->all();
+        return $this->customerModel->paginate(10);
     }
 
     public function findById($id)

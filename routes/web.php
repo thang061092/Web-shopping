@@ -25,10 +25,11 @@ Route::prefix('/')->group(function () {
     Route::post('cart-payment', 'BillController@payment')->name('carts.payment');
     Route::get('cart-update/{rowId}', 'CartController@updateCart')->name('carts.update');
     Route::get('/search', 'ProductController@searchHome')->name('products.search');
-    Route::get('/category-show/{id}','CategoryController@show')->name('categories.show');
-
+    Route::get('/category-show/{id}', 'CategoryController@show')->name('categories.show');
 });
+
 Auth::routes();
+
 Route::middleware('auth')->group(function () {
 
     Route::get('/admin', 'HomeController@index')->name('home');
@@ -50,6 +51,9 @@ Route::middleware('auth')->group(function () {
         Route::get('/fitter-status', 'BillController@fitterStatus')->name('bills.status');
     });
 
+    Route::prefix('customers')->group(function () {
+        Route::get('/', 'CustomerController@index')->name('customers.index');
+    });
 });
 
 

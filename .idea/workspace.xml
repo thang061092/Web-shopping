@@ -23,12 +23,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea4dedc1-6e89-4ef2-be74-67f3218f3896" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/asaawqq.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/hnhhn.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/tttt.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/yhyh.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/customers/list.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/shopping/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shopping/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BillController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BillController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Repositories/CustomerRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repositories/CustomerRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Services/CustomerService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Services/CustomerService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,7 +217,8 @@
       <workItem from="1597332168330" duration="5083000" />
       <workItem from="1597367567917" duration="15222000" />
       <workItem from="1597395369461" duration="14742000" />
-      <workItem from="1597455177254" duration="10774000" />
+      <workItem from="1597455177254" duration="11342000" />
+      <workItem from="1597543275351" duration="4537000" />
     </task>
     <servers />
   </component>
@@ -279,10 +281,10 @@
       <screen x="0" y="0" width="1920" height="1046" />
     </state>
     <state x="641" y="228" width="651" height="596" key="NewPhpClassDialog/0.0.1920.1046@0.0.1920.1046" timestamp="1597309950469" />
-    <state x="755" y="445" width="399" height="161" key="NewPhpFileDialog" timestamp="1597477895525">
+    <state x="755" y="445" width="399" height="161" key="NewPhpFileDialog" timestamp="1597559234358">
       <screen x="0" y="0" width="1920" height="1046" />
     </state>
-    <state x="755" y="445" width="399" height="161" key="NewPhpFileDialog/0.0.1920.1046@0.0.1920.1046" timestamp="1597477895525" />
+    <state x="755" y="445" width="399" height="161" key="NewPhpFileDialog/0.0.1920.1046@0.0.1920.1046" timestamp="1597559234358" />
     <state x="441" y="158" width="1037" height="736" key="SettingsEditor" timestamp="1597195150719">
       <screen x="0" y="0" width="1920" height="1046" />
     </state>

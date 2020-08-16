@@ -52,4 +52,9 @@ class CustomerService
             $this->detailRepo->save($detail);
         }
     }
+
+    public function getAll()
+    {
+        return $this->customerRepo->getAll();
+    }
 }

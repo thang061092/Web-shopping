@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 
 class BillController extends Controller
 {
-    protected $payment;
+    protected $customerService;
     protected $billService;
     protected $detailService;
 
@@ -20,14 +20,14 @@ class BillController extends Controller
                                 BillService $billService,
                                 DetailService $detailService)
     {
-        $this->payment = $customerService;
+        $this->customerService = $customerService;
         $this->billService = $billService;
         $this->detailService = $detailService;
     }
 
     public function payment(FormBillRequest $request)
     {
-        $this->payment->create($request);
+        $this->customerService->create($request);
         toastr()->success('Đơn hàng của bạn đang được xử lý ');
         Cart::destroy();
         return redirect()->route('products.shop');
