@@ -23,13 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea4dedc1-6e89-4ef2-be74-67f3218f3896" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/customers/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BillController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BillController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Repositories/CustomerRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repositories/CustomerRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Services/CustomerService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Services/CustomerService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Bill.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Bill.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Services/BillService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Services/BillService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/plugins.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/plugins.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,7 +217,9 @@
       <workItem from="1597367567917" duration="15222000" />
       <workItem from="1597395369461" duration="14742000" />
       <workItem from="1597455177254" duration="11342000" />
-      <workItem from="1597543275351" duration="4537000" />
+      <workItem from="1597543275351" duration="5722000" />
+      <workItem from="1597578636792" duration="1078000" />
+      <workItem from="1597580553596" duration="912000" />
     </task>
     <servers />
   </component>
@@ -257,10 +258,10 @@
       <screen x="0" y="0" width="1920" height="1046" />
     </state>
     <state x="693" y="281" width="524" height="490" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1046@0.0.1920.1046" timestamp="1597419895570" />
-    <state x="743" y="281" width="424" height="490" key="FileChooserDialogImpl" timestamp="1597306628977">
+    <state x="743" y="281" width="424" height="490" key="FileChooserDialogImpl" timestamp="1597579783693">
       <screen x="0" y="0" width="1920" height="1046" />
     </state>
-    <state x="743" y="281" width="424" height="490" key="FileChooserDialogImpl/0.0.1920.1046@0.0.1920.1046" timestamp="1597306628977" />
+    <state x="743" y="281" width="424" height="490" key="FileChooserDialogImpl/0.0.1920.1046@0.0.1920.1046" timestamp="1597579783693" />
     <state width="1870" height="271" key="GridCell.Tab.0.bottom" timestamp="1597381838719">
       <screen x="0" y="0" width="1920" height="1046" />
     </state>
