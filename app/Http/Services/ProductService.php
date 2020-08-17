@@ -36,7 +36,6 @@ class ProductService
             $path = $image->store('images', 'public');
             $product->image = $path;
         }
-        $product->save();
         $this->productRepo->save($product);
     }
 
