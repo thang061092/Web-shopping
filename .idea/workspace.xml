@@ -23,7 +23,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea4dedc1-6e89-4ef2-be74-67f3218f3896" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Exports/ProductsExport.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Exports/UsersExport.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/excel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/ajax/cart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/laravel-excel/laravel-excel-23zxKSA6WbB5y9bzo6RBa7c5YuZfJocj.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/laravel-excel/laravel-excel-2J9NnSe8Pd7ieUh1DZkPMVpj2J01ibRX.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/laravel-excel/laravel-excel-KJPZ3wijXjVGqK5jihO12E5sCDTJwncG.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/laravel-excel/laravel-excel-cWxTJZZPluGFcVeiAw48d2ObWLx0ZlCp.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stubs/export.model.stub" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stubs/export.plain.stub" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stubs/export.query-model.stub" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stubs/export.query.stub" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stubs/import.collection.stub" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stubs/import.model.stub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/web-product.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/web-product.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Repositories/CategoryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repositories/CategoryRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery/my.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/jquery/my.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/bills/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/bills/detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/customers/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/customers/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/products/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/shopping/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shopping/cart.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/shopping/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shopping/detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/shopping/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shopping/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,8 +73,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -152,6 +188,14 @@
       <path value="$PROJECT_DIR$/vendor/bumbummen99/shoppingcart" />
       <path value="$PROJECT_DIR$/vendor/melihovv/laravel-shopping-cart" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/php-enum" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/maatwebsite/excel" />
+      <path value="$PROJECT_DIR$/vendor/maennchen/zipstream-php" />
     </include_path>
   </component>
   <component name="ProjectId" id="1fyfErR1UHdqwRghOA95lLYCtT2" />
@@ -172,6 +216,7 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -215,11 +260,27 @@
       <workItem from="1597543275351" duration="5722000" />
       <workItem from="1597578636792" duration="1078000" />
       <workItem from="1597580553596" duration="2001000" />
+      <workItem from="1599128183426" duration="266000" />
+      <workItem from="1599128765316" duration="573000" />
+      <workItem from="1599276941911" duration="3524000" />
+      <workItem from="1599284316860" duration="5000" />
+      <workItem from="1599372591336" duration="3141000" />
+      <workItem from="1599485074157" duration="30000" />
+      <workItem from="1599732360475" duration="819000" />
+      <workItem from="1599809164264" duration="4004000" />
+      <workItem from="1599881154634" duration="5163000" />
+      <workItem from="1599992357530" duration="686000" />
+      <workItem from="1600003402750" duration="284000" />
+      <workItem from="1600003911946" duration="2551000" />
+      <workItem from="1600009396804" duration="3059000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.env" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -241,6 +302,10 @@
       <screen x="0" y="0" width="1920" height="1046" />
     </state>
     <state x="727" y="396" width="456" height="260" key="#Composer/0.0.1920.1046@0.0.1920.1046" timestamp="1597195219672" />
+    <state x="542" y="219" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599128858911">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="542" y="219" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834@0.0.1536.834" timestamp="1599128858911" />
     <state x="772" y="283" width="355" height="492" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1597309808243">
       <screen x="0" y="0" width="1920" height="1046" />
     </state>
@@ -249,13 +314,15 @@
       <screen x="0" y="0" width="1920" height="1046" />
     </state>
     <state x="693" y="270" width="524" height="511" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1046@0.0.1920.1046" timestamp="1597327095124" />
-    <state x="693" y="281" width="524" height="490" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1597419895570">
-      <screen x="0" y="0" width="1920" height="1046" />
+    <state x="554" y="224" width="524" height="490" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1599810927190">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
+    <state x="554" y="224" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1599810927190" />
     <state x="693" y="281" width="524" height="490" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1046@0.0.1920.1046" timestamp="1597419895570" />
-    <state x="743" y="281" width="424" height="490" key="FileChooserDialogImpl" timestamp="1597579783693">
-      <screen x="0" y="0" width="1920" height="1046" />
+    <state x="594" y="224" width="424" height="490" key="FileChooserDialogImpl" timestamp="1599485101916">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
+    <state x="594" y="224" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1599485101916" />
     <state x="743" y="281" width="424" height="490" key="FileChooserDialogImpl/0.0.1920.1046@0.0.1920.1046" timestamp="1597579783693" />
     <state width="1870" height="271" key="GridCell.Tab.0.bottom" timestamp="1597381838719">
       <screen x="0" y="0" width="1920" height="1046" />
@@ -273,9 +340,10 @@
       <screen x="0" y="0" width="1920" height="1046" />
     </state>
     <state width="1870" height="271" key="GridCell.Tab.0.right/0.0.1920.1046@0.0.1920.1046" timestamp="1597381838719" />
-    <state x="641" y="228" width="651" height="596" key="NewPhpClassDialog" timestamp="1597309950469">
-      <screen x="0" y="0" width="1920" height="1046" />
+    <state x="513" y="182" width="521" height="495" key="NewPhpClassDialog" timestamp="1599810202214">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
+    <state x="513" y="182" width="521" height="495" key="NewPhpClassDialog/0.0.1536.834@0.0.1536.834" timestamp="1599810202214" />
     <state x="641" y="228" width="651" height="596" key="NewPhpClassDialog/0.0.1920.1046@0.0.1920.1046" timestamp="1597309950469" />
     <state x="755" y="445" width="399" height="161" key="NewPhpFileDialog" timestamp="1597559234358">
       <screen x="0" y="0" width="1920" height="1046" />

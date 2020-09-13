@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Services\ProductService;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use http\Env\Response;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -30,24 +31,30 @@ class CartController extends Controller
                 'price' => $product->price,
                 'weight' => 0,
                 'options' => ['image' => $product->image,
-                              'desc' => $product->desc,
-                              'quantityProduct' => $product->quantity
+                    'desc' => $product->desc,
+                    'quantityProduct' => $product->quantity
                 ],
             ]);
-            toastr()->success('Thêm sản phẩm vào giỏ hàng thành công ');
-            return back();
-        } else {
-            toastr()->error('Quý khách thông cảm, Sản phẩm hiện đang hết hàng');
-            return back();
+            $data = [
+                'status' => 'thanh cong',
+                'message'=>'Thêm sản phẩm vào giỏ hàng thành công ',
+                'total' => Cart::content()->count()
+            ];
+            return \response()->json($data);
         }
-
     }
 
     public function destroyIdCart($id)
     {
         Cart::remove($id);
-        toastr()->success('Xóa sản phẩm thành công ');
-        return redirect()->route('carts.show');
+        $data = [
+            'cart' => Cart::content(),
+            'total' => Cart::content()->count(),
+            'result' => Cart::subtotal(),
+            'status' => 'thanh cong',
+            'message'=>'Xóa sản phẩm thành công ',
+        ];
+        return \response()->json($data);
     }
 
     public function checkoutCart()
@@ -64,10 +71,8 @@ class CartController extends Controller
             'item' => Cart::get($rowId),
             'total' => Cart::subtotal(),
             'totalProduct' => (Cart::get($rowId)->qty) * (Cart::get($rowId)->price),
-            'quantityProduct'=> Cart::get($rowId)->options->quantityProduct
+            'quantityProduct' => Cart::get($rowId)->options->quantityProduct
         ];
         return response()->json($data);
-
     }
-
 }

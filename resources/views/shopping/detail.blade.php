@@ -4,9 +4,9 @@
         <section class="single_product_details_area d-flex align-items-center">
             <div class="single_product_thumb clearfix">
                 <div class="product_thumbnail_slides owl-carousel">
-                    <img src="{{asset('storage/'.$product->image)}}" alt="" style="width: 85%">
-                    <img src="{{asset('storage/'.$product->image)}}" alt="" style="width: 85%">
-                    <img src="{{asset('storage/'.$product->image)}}" alt="" style="width: 85%">
+                    <img src="{{asset('storage/'.$product->image)}}" alt="" style="width: 75%">
+                    <img src="{{asset('storage/'.$product->image)}}" alt="" style="width: 75%">
+                    <img src="{{asset('storage/'.$product->image)}}" alt="" style="width: 75%">
                 </div>
             </div>
             <div class="single_product_desc clearfix">

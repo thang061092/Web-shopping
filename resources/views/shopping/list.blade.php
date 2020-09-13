@@ -63,9 +63,9 @@
                             <div class="single-product-wrapper">
                                 <div class="product-img">
                                     <img src="{{asset('storage/'.$product->image)}}" alt=""
-                                         style="width: 200px; height: 150px">
+                                         style="width: 100px;height: 100px">
                                     <img class="hover-img" src="{{asset('storage/'.$product->image)}}" alt=""
-                                         style="width: 200px">
+                                         style="width: 150px;height: 150px">
                                 </div>
                                 <div class="product-description">
                                     <span>{{$product->category->name}}</span>
@@ -83,9 +83,9 @@
                                     </div>
                                     <div class="hover-content">
                                         <div class="add-to-cart-btn">
-                                            <a href="{{route('carts.add',$product->id)}}"
-                                               class="btn essence-btn add-cart">Thêm
-                                                vào giỏ hàng</a>
+                                            <button data-id="{{$product->id}}"
+                                                    class="btn essence-btn add-cart">Thêm
+                                                vào giỏ hàng</button>
                                         </div>
                                     </div>
                                 </div>
@@ -102,9 +102,9 @@
                             <div class="single-product-wrapper">
                                 <div class="product-img">
                                     <img src="{{asset('storage/'.$product->image)}}" alt=""
-                                         style="width: 200px; height: 150px">
+                                         style="width: 100px;height: 100px">
                                     <img class="hover-img" src="{{asset('storage/'.$product->image)}}" alt=""
-                                         style="width: 200px">
+                                         style="width: 150px;height: 150px">
                                 </div>
                                 <div class="product-description">
                                     <span>{{$product->category->name}}</span>
@@ -122,9 +122,9 @@
                                     </div>
                                     <div class="hover-content">
                                         <div class="add-to-cart-btn">
-                                            <a href="{{route('carts.add',$product->id)}}"
+                                            <button data-id="{{$product->id}}"
                                                class="btn essence-btn add-cart">Thêm
-                                                vào giỏ hàng</a>
+                                                vào giỏ hàng</button>
                                         </div>
                                     </div>
                                 </div>

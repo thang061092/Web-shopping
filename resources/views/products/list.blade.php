@@ -54,7 +54,7 @@
                             <td>{!! \Illuminate\Support\Str::limit($product->desc,300,' ......') !!}</td>
                             <td>{{$product->quantity}}</td>
                             <td>
-                                <img src="{{asset('storage/'.$product->image)}}" style="width: 150px;height: 120px">
+                                <img src="{{asset('storage/'.$product->image)}}" style="width: 100px">
                             </td>
                             <td>
                                 <a class="btn btn-primary" href="{{route('products.edit',$product->id)}}"><i
@@ -68,16 +68,6 @@
                 @endif
                 </tbody>
             </table>
-            {{--            <div class="col-md-12 pt-5">--}}
-            {{--                <div class="row">--}}
-            {{--                    <div class="col-md-10">--}}
-
-            {{--                    </div>--}}
-            {{--                    <div class="col-md-1 ml-4">--}}
-            {{--                        {{ $products->appends(request()->query())}}--}}
-            {{--                    </div>--}}
-            {{--                </div>--}}
-            {{--            </div>--}}
             {{ $products->appends(request()->query())}}
         </div>
 

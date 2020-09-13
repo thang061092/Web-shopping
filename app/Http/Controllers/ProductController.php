@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ProductsExport;
 use App\Http\Requests\FormAddRequest;
 use App\Http\Services\CategoryService;
 use App\Http\Services\ProductService;
-use App\Product;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ProductController extends Controller
 {
@@ -87,6 +88,11 @@ class ProductController extends Controller
         $this->productService->update($product, $request);
         toastr()->success('Cập nhật thành công ');
         return redirect()->route('products.index');
+    }
+
+    public function export()
+    {
+        return Excel::download(new ProductsExport, 'products.xlsx');
     }
 
 }

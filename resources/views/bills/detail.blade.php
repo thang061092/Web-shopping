@@ -1,6 +1,6 @@
 @extends('admin.layout')
 @section('content')
-    <div class="card table-hover">
+    <div class="card">
         <div class="card-header">
             <ol class="breadcrumb mb-1 mt-1">
                 <li class="breadcrumb-item active">
@@ -10,7 +10,7 @@
                 <li class="breadcrumb-item active">Chi tiết hóa đơn</li>
             </ol>
         </div>
-        <div class="card-body">
+        <div class="card-body table-hover">
             <table class="table table-striped">
                 <tr>
                     <th>Người Đặt Hàng:</th>

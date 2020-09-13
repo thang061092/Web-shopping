@@ -5,7 +5,7 @@
             <div class="col-12">
                 <div class="table-responsive">
                     @if (count(Cart::content()))
-                        <table class="table table-striped">
+                        <table class="table table-striped cart-show">
                             <thead class="table-dark">
                             <tr>
                                 <th scope="col">Hình ảnh</th>
@@ -18,9 +18,9 @@
                             </thead>
                             <tbody>
                             @foreach (Cart::content() as $item)
-                                <tr>
+                                <tr id="content-cart-{{$item->rowId}}">
                                     <td><img src="{{asset('storage/'.$item->options->image)}}"
-                                             style="width: 200px;height: 100px"/></td>
+                                             style="width: 100px;height: 70px"/></td>
                                     <td>{{$item->name}}</td>
                                     <td><input min="1" class="form-control update-product-cart" type="number" name="qty"
                                                data-rowId="{{ $item->rowId }}"
@@ -30,8 +30,8 @@
                                         id="product-subtotal-{{$item->id}}">{{number_format($item->price * $item->qty)}}
                                         VND
                                     </td>
-                                    <td><a class="btn btn-danger" href="{{route('carts.destroy',$item->rowId)}}"><i
-                                                class="fa fa-trash-alt"></i> </a></td>
+                                    <td><button class="btn btn-danger remove-product-cart" data-id="{{$item->rowId}}"><i
+                                                class="fa fa-trash-alt"></i> </button></td>
                                 </tr>
                             @endforeach
                             <tr>
@@ -47,7 +47,7 @@
                             </tbody>
                         </table>
                     @else
-                        <div class="alert alert-info text-center pb-3 pt-3" role="alert">
+                        <div class="alert alert-info text-center pb-3 pt-3 empty-cart" role="alert">
                             Giỏ hàng của bạn <b>đang trống</b>.
                         </div>
                     @endif

@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+//frontend
 Route::prefix('/')->group(function () {
     Route::get('/', 'ProductController@shop')->name('products.shop');
     Route::get('/show/{id}', 'ProductController@show')->name('products.show');
@@ -28,6 +28,7 @@ Route::prefix('/')->group(function () {
     Route::get('/category-show/{id}', 'CategoryController@show')->name('categories.show');
 });
 
+//backend
 Auth::routes();
 
 Route::middleware('auth')->group(function () {
@@ -54,6 +55,9 @@ Route::middleware('auth')->group(function () {
     Route::prefix('customers')->group(function () {
         Route::get('/', 'CustomerController@index')->name('customers.index');
     });
+
+    Route::get('users/export/', 'UserController@export');
+    Route::get('products/export/', 'ProductController@export');
 });
 
 

@@ -17,7 +17,7 @@ class CategoryRepository
 
     public function getAll()
     {
-        return $this->categoryModel->all();
+        return $this->categoryModel->paginate(10);
     }
 
     public function save($category)

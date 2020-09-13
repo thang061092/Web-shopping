@@ -64,7 +64,7 @@
                 </form>
             </div>
             <div class="cart-area">
-                <a href="{{route('carts.show')}}" class="text-danger"><i class="fas fa-shopping-cart"></i>
+                <a href="{{route('carts.show')}}" class="text-danger cart-total"><i class="fas fa-shopping-cart"></i>
                     ({{\Gloudemans\Shoppingcart\Facades\Cart::content()->count()}})</a>
             </div>
             <div class="user-login-info">
