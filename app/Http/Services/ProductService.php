@@ -4,6 +4,7 @@
 namespace App\Http\Services;
 
 
+use App\Http\Controllers\Status;
 use App\Http\Repositories\ProductRepository;
 use App\Product;
 use Illuminate\Support\Facades\Storage;
@@ -31,6 +32,7 @@ class ProductService
         $product->price = $request->price;
         $product->quantity = $request->quantity;
         $product->category_id = $request->cate;
+        $product->status = Status::ACTIVE;
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $path = $image->store('images', 'public');
@@ -89,5 +91,22 @@ class ProductService
     {
         $category = $request->category;
         return $this->productRepo->filterCategory($category);
+    }
+
+    public function blockProduct($product)
+    {
+        $product->status = Status::BLOCK;
+        $this->productRepo->save($product);
+    }
+
+    public function getProductBlock()
+    {
+        return $this->productRepo->getProductBlock();
+    }
+
+    public function activeProduct($product)
+    {
+        $product->status = Status::ACTIVE;
+        $this->productRepo->save($product);
     }
 }

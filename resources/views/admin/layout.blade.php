@@ -59,6 +59,7 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="{{route('products.index')}}">Danh sách sản phẩm </a>
                     <a class="collapse-item" href="{{route('products.create')}}">Thêm mới sản phẩm </a>
+                    <a class="collapse-item" href="{{route('products.listBlock')}}">Danh sách sản phẩm Block </a>
                 </div>
             </div>
         </li>

@@ -16,7 +16,7 @@
                 <p class="product-desc">{!! $product->desc !!}</p>
 
                 <div class="cart-fav-box d-flex align-items-center">
-                    <a class="btn btn-primary" href="{{route('carts.add',$product->id)}}">Thêm vào giỏ hàng</a>
+                    <button class="btn btn-primary add-cart" data-id="{{$product->id}}">Thêm vào giỏ hàng</button>
                     <a class="btn btn-secondary ml-3" href="{{route('products.shop')}}">Về trang chủ</a>
                 </div>
             </div>

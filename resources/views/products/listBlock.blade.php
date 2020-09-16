@@ -6,7 +6,7 @@
                 <li class="breadcrumb-item active">
                     <a href="{{route('products.index')}}">Home</a>
                 </li>
-                <li class="breadcrumb-item active">Danh sách sản phẩm</li>
+                <li class="breadcrumb-item active">Danh sách sản phẩm Block</li>
             </ol>
         </div>
         <form action="{{route('products.filter')}}" method="get">
@@ -34,8 +34,7 @@
                     <th scope="col">Giá tiền</th>
                     <th scope="col">Mô tả</th>
                     <th scope="col">Số lượng</th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
+                    <th scope="col">Khôi phục</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -57,11 +56,8 @@
                             <td>{!! \Illuminate\Support\Str::limit($product->desc,300,' ......') !!}</td>
                             <td>{{$product->quantity}}</td>
                             <td>
-                                <a class="btn btn-primary" href="{{route('products.edit',$product->id)}}"><i
-                                        class="fas fa-edit"></i></a>
-                            </td>
-                            <td>
-                                <a class="btn btn-danger" href="{{route('products.block',$product->id)}}"><i class="fas fa-trash"></i> </a>
+                                <a class="btn btn-success" href="{{route('products.active',$product->id)}}"><i
+                                        class="fas fa-window-restore"></i></a>
                             </td>
                         </tr>
                     @endforeach
@@ -77,3 +73,4 @@
 
 
 @endsection
+

@@ -32,9 +32,9 @@
                             <td>
                                 <img src="{{asset('storage/'.$product->image)}}" style="width: 200px;height: 150px">
                             </td>
-                            <td><a class="btn btn-success text-white" href="{{route('carts.add',$product->id)}}">Thêm
+                            <td><button class="btn btn-success text-white add-cart" data-id="{{$product->id}}">Thêm
                                     vào
-                                    giỏ hàng </a></td>
+                                    giỏ hàng </button></td>
                         </tr>
                     @endforeach
                 @endif

@@ -95,4 +95,27 @@ class ProductController extends Controller
         return Excel::download(new ProductsExport, 'products.xlsx');
     }
 
+    public function blockProduct($id)
+    {
+        $product = $this->productService->findById($id);
+        $this->productService->blockProduct($product);
+        toastr()->success('Cập nhật thành công ');
+        return redirect()->route('products.index');
+    }
+
+    public function getProductBlock()
+    {
+        $products = $this->productService->getProductBlock();
+        $categories = $this->categoryService->getAll();
+        return view('products.listBlock', compact('products', 'categories'));
+    }
+
+    public function activeProduct($id)
+    {
+        $product = $this->productService->findById($id);
+        $this->productService->activeProduct($product);
+        toastr()->success('Cập nhật thành công ');
+        return redirect()->route('products.index');
+    }
+
 }

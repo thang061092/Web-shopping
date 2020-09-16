@@ -43,6 +43,10 @@ Route::middleware('auth')->group(function () {
         Route::get('/search-product', 'ProductController@searchProduct')->name('products.searchProduct');
         Route::get('/edit/{id}', 'ProductController@edit')->name('products.edit');
         Route::post('/edit/{id}', 'ProductController@update')->name('products.update');
+        Route::get('block-product/{id}', 'ProductController@blockProduct')->name('products.block');
+        Route::get('list-block', 'ProductController@getProductBlock')->name('products.listBlock');
+        Route::get('active-product/{id}', 'ProductController@activeProduct')->name('products.active');
+
     });
 
     Route::prefix('bills')->group(function () {

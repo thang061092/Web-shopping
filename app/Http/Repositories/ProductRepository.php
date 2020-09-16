@@ -4,6 +4,7 @@
 namespace App\Http\Repositories;
 
 
+use App\Http\Controllers\status;
 use App\Product;
 use phpDocumentor\Reflection\Types\This;
 
@@ -18,7 +19,7 @@ class ProductRepository
 
     public function getAll()
     {
-        return $this->productModel->paginate(5);
+        return $this->productModel->where('status', status::ACTIVE)->paginate(5);
     }
 
     public function save($product)
@@ -38,27 +39,32 @@ class ProductRepository
 
     public function allDesc()
     {
-        return $this->productModel->orderBy('created_at', 'DESC')->get();
+        return $this->productModel->where('status', Status::ACTIVE)->orderBy('created_at', 'DESC')->get();
     }
 
     public function allAsc()
     {
-        return $this->productModel->orderBy('created_at', 'ASC')->get();
+        return $this->productModel->where('status', Status::ACTIVE)->orderBy('created_at', 'ASC')->get();
     }
 
     public function searchProduct($keyword)
     {
-        return $this->productModel->where('name', 'LIKE', '%' . $keyword . '%')->paginate(5);
+        return $this->productModel->where('name', 'LIKE', '%' . $keyword . '%')->where('status', Status::ACTIVE)->paginate(5);
     }
 
     public function searchHome($keyword)
     {
-        return $this->productModel->where('name', 'LIKE', '%' . $keyword . '%')->paginate(5);
+        return $this->productModel->where('name', 'LIKE', '%' . $keyword . '%')->where('status', Status::ACTIVE)->paginate(5);
     }
 
     public function filterCategory($category)
     {
-        return $this->productModel->where('category_id', $category)->paginate(5);
+        return $this->productModel->where('category_id', $category)->where('status', Status::ACTIVE)->paginate(5);
+    }
+
+    public function getProductBlock()
+    {
+        return $this->productModel->where('status', status::BLOCK)->paginate(5);
     }
 
 }
