@@ -33,6 +33,7 @@ class ProductService
         $product->quantity = $request->quantity;
         $product->category_id = $request->cate;
         $product->status = Status::ACTIVE;
+        $product->codeSale = Status::DEFAULT;
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $path = $image->store('images', 'public');

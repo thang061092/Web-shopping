@@ -23,7 +23,7 @@ Route::prefix('/')->group(function () {
     Route::get('/cart-destroy/{id}', 'CartController@destroyIdCart')->name('carts.destroy');
     Route::get('/cart-checkout', 'CartController@checkoutCart')->name('carts.checkout');
     Route::post('cart-payment', 'BillController@payment')->name('carts.payment');
-    Route::get('cart-update/{rowId}', 'CartController@updateCart')->name('carts.update');
+    Route::get('cart-update/{rowId}/{id}', 'CartController@updateCart')->name('carts.update');
     Route::get('/search', 'ProductController@searchHome')->name('products.search');
     Route::get('/category-show/{id}', 'CategoryController@show')->name('categories.show');
 });

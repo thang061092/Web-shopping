@@ -20,4 +20,9 @@ class Bill extends Model
     {
         return $this->belongsToMany('App\Product', 'details', 'bill_id', 'product_id');
     }
+
+    public function contracts()
+    {
+        return $this->hasMany('App\Contract','bill_id','id');
+    }
 }

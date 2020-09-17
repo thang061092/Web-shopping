@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Detail;
 use App\Http\Requests\FormBillRequest;
 use App\Http\Services\BillService;
+use App\Http\Services\ContractService;
 use App\Http\Services\CustomerService;
 use App\Http\Services\DetailService;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -15,14 +16,17 @@ class BillController extends Controller
     protected $customerService;
     protected $billService;
     protected $detailService;
+    protected $contractService;
 
     public function __construct(CustomerService $customerService,
                                 BillService $billService,
-                                DetailService $detailService)
+                                DetailService $detailService,
+                                ContractService $contractService)
     {
         $this->customerService = $customerService;
         $this->billService = $billService;
         $this->detailService = $detailService;
+        $this->contractService = $contractService;
     }
 
     public function payment(FormBillRequest $request)
@@ -44,7 +48,8 @@ class BillController extends Controller
     {
         $bill = $this->billService->findById($id);
         $details = $this->detailService->find($id);
-        return view('bills.detail', compact('bill', 'details'));
+        $contracts = $this->contractService->getById($id);
+        return view('bills.detail', compact('bill', 'details','contracts'));
     }
 
     public function update(Request $request, $id)

@@ -17,12 +17,12 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{asset('js/jquery/my.js')}}"></script>
     <!-- Custom styles for this template-->
     <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
     <title>Toastr.js</title>
     @toastr_css
-
 </head>
 
 <body id="page-top">
@@ -230,8 +230,8 @@
 <script>
     CKEDITOR.replace('editor');
 </script>
-</body>
 @jquery
 @toastr_js
 @toastr_render
+</body>
 </html>

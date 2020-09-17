@@ -15,10 +15,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
           integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link  rel ="stylesheet" href ="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
     <script src="{{asset('js/jquery/my.js')}}"></script>
-
-    <title>Toastr.js</title>
-    @toastr_css
 </head>
 
 <body>
@@ -144,8 +142,6 @@
 <script>
     CKEDITOR.replace('editor');
 </script>
+<script  src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"> </script>
 </body>
-@jquery
-@toastr_js
-@toastr_render
 </html>

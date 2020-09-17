@@ -84,15 +84,15 @@
                                         <h6 class="product-price">Giá cũ : <p
                                                 class="text-secondary price-sale-code">{{number_format($product->price)}}
                                                 VND </p></h6>
-                                        <h6 class="product-price">Giá khuyến mại
-                                            <div class="text-danger">({{$product->codeSale.'%'}})</div>
+                                        <h6 class="product-price">Giá khuyến mại:
+                                            <div class="text-danger">SALE({{$product->codeSale.'%'}})</div>
                                             <p
                                                 class="text-danger">{{number_format(($product->price) - (($product->price/100)*($product->codeSale)))}}
                                                 VND </p></h6>
                                     @endif
                                     <div>
                                         @if($product->quantity == 0)
-                                            <h6 class="text-primary">Tạm hết hàng</h6>
+                                            <h6 class="text-secondary">Tạm hết hàng</h6>
                                         @else
                                             <h6 class="text-primary">Còn hàng</h6>
                                         @endif
@@ -135,15 +135,15 @@
                                         <h6 class="product-price">Giá cũ : <p
                                                 class="text-secondary price-sale-code">{{number_format($product->price)}}
                                                 VND </p></h6>
-                                        <h6 class="product-price">Giá khuyến mại
-                                            <div class="text-danger">({{$product->codeSale.'%'}})</div>
+                                        <h6 class="product-price">Giá khuyến mại:
+                                            <div class="text-danger">SALE({{$product->codeSale.'%'}})</div>
                                             <p
                                                 class="text-danger">{{number_format(($product->price) - (($product->price/100)*($product->codeSale)))}}
                                                 VND </p></h6>
                                     @endif
                                     <div>
                                         @if($product->quantity == 0)
-                                            <h6 class="text-secondary">Hết hàng</h6>
+                                            <h6 class="text-secondary">Tạm hết hàng</h6>
                                         @else
                                             <h6 class="text-primary">Còn hàng</h6>
                                         @endif

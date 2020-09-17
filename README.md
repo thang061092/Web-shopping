@@ -14,4 +14,4 @@ sau đó chạy lệnh composer require bumbummen99/shoppingcart để update ca
 nguồn tham khảo method:
 https://packagist.org/packages/bumbummen99/shoppingcart
 
-sau đó chạy: composer require yoeunes/toastr
+sau đó chạy: composer require brian2694/laravel-toastr

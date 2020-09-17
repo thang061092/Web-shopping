@@ -5,16 +5,21 @@ $(document).ready(function () {
         let rowId = $(this).attr('data-rowId');
         let id = $(this).attr('data-id');
         $.ajax({
-            url: origin + '/cart-update/' + rowId,
+            url: origin + '/cart-update/' + rowId + '/' + id,
             method: 'GET',
             data: {
                 qty: qtyNew,
             },
             dataType: 'json',
             success: function (result) {
-                console.log(result)
-                $('#product-subtotal-' + id).html(result.totalProduct.toLocaleString() + ' VNĐ')
-                $('#total-price-cart').html('<strong>' + result.total.toLocaleString() + ' VNĐ' + '</strong>')
+                if (result.type == 1) {
+                    $('#product-subtotal-' + id).html(result.totalProduct.toLocaleString() + ' VNĐ')
+                    $('#total-price-cart').html('<strong>' + result.total.toLocaleString() + ' VNĐ' + '</strong>')
+                    toastr.success(result.message)
+                } else {
+                    toastr.error(result.message);
+                }
+
             },
         })
     });
@@ -26,8 +31,14 @@ $(document).ready(function () {
             method: "GET",
             dataType: 'json',
             success: function (data) {
-                toastr.success(data.message);
-                $('.cart-total').html('<i class="fas fa-shopping-cart"></i>' + '(' + data.total + ')')
+                if (data.type == 1) {
+                    toastr.success(data.message);
+                    $('.cart-total').html('<i class="fas fa-shopping-cart"></i>' + '(' + data.total + ')')
+                } else {
+                    toastr.error(data.message);
+                    $('.cart-total').html('<i class="fas fa-shopping-cart"></i>' + '(' + data.total + ')')
+                }
+
             }
         })
     })
@@ -46,5 +57,16 @@ $(document).ready(function () {
             }
         })
     })
+
+    $(document).ready(function () {
+        $("td").on({
+            mouseenter: function () {
+                $(this).css("color", "red");
+            },
+            mouseleave: function () {
+                $(this).css("color", "green");
+            },
+        });
+    });
 
 })

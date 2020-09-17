@@ -34,6 +34,30 @@
                 </tr>
             </table>
         </div>
+        <div class="card-body pt-2">
+            <div class="card-header">
+                <h3>Chi tiết cập nhật</h3>
+            </div>
+            <table class="table">
+                <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Người cập nhật</th>
+                    <th>Ghi chú</th>
+                    <th>Thời gian cập nhật</th>
+                </tr>
+                </thead>
+                @foreach($contracts as $key => $contract)
+                    <tr>
+                        <td>{{++$key}}</td>
+                        <td>{{$contract->create_by}}</td>
+                        <td>{{$contract->note}}</td>
+                        <td>{{$contract->created_at}}</td>
+                    </tr>
+                @endforeach
+            </table>
+        </div>
+
         <div class="card-body pt-5">
             <table class="table">
                 <thead class="table-dark">
@@ -42,9 +66,8 @@
                     <th>Sản phẩm</th>
                     <th>Giá gốc</th>
                     <th>Giá mua</th>
-                    <th>Mã giảm </th>
+                    <th>Mã giảm</th>
                     <th>Đặt mua</th>
-
                     <th>Hình ảnh</th>
                 </tr>
                 </thead>
@@ -52,7 +75,8 @@
                     <tr>
                         <td>{{++$key}}</td>
                         <td class="text-success">{{\Illuminate\Support\Str::limit($detail->product->name,30)}}</td>
-                        <td><span class="text-danger">{{number_format($detail->product->price).' VND'}}/sản phẩm</span></td>
+                        <td><span class="text-danger">{{number_format($detail->product->price).' VND'}}/sản phẩm</span>
+                        </td>
                         <td><span class="text-danger">{{number_format($detail->price).' VND'}}/sản phẩm</span></td>
                         <td><span class="text-danger">{{$detail->codeSale.' %'}}</span></td>
                         <td>{{$detail->quantityProduct}}</td>
@@ -65,6 +89,10 @@
                 </tr>
                 <form method="get" action="{{route('bills.update',$bill->id)}}">
                     @csrf
+                    <tr>
+                        <th>Ghi chú:</th>
+                        <td><textarea type="text" name="note" class="form-control" rows="3" required></textarea></td>
+                    </tr>
                     <tr>
                         <th>Xác nhận đơn hàng:</th>
                         @if($bill->status == \App\Http\Controllers\Major::FINISH)

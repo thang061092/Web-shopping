@@ -3,22 +3,28 @@
 
 namespace App\Http\Services;
 
+use App\Contract;
 use App\Detail;
 use App\Http\Controllers\Major;
 use App\Http\Repositories\BillRepository;
+use App\Http\Repositories\ContractRepository;
 use App\Http\Repositories\DetailRepository;
+use Illuminate\Support\Facades\Auth;
 
 
 class BillService
 {
     protected $billRepo;
     protected $detailRepo;
+    protected $contractRepo;
 
     public function __construct(BillRepository $billRepo,
-                                DetailRepository $detailRepo)
+                                DetailRepository $detailRepo,
+                                ContractRepository $contractRepo)
     {
         $this->billRepo = $billRepo;
         $this->detailRepo = $detailRepo;
+        $this->contractRepo = $contractRepo;
     }
 
     public function getAll()
@@ -36,6 +42,11 @@ class BillService
         $bill = $this->billRepo->findById($id);
         $bill->status = $request->status;
         $details = $this->detailRepo->find($id);
+        $contract = new Contract();
+        $contract->bill_id = $id;
+        $contract->note = $request->note;
+        $contract->create_by = Auth::user()->email;
+        $this->contractRepo->save($contract);
         $sumProductBill = 0;
         $sumProduct = 0;
         foreach ($details as $detail) {

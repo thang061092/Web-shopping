@@ -38,7 +38,15 @@ class CartController extends Controller
             ]);
             $data = [
                 'status' => 'thanh cong',
+                'type' => 1,
                 'message' => 'Thêm sản phẩm vào giỏ hàng thành công ',
+                'total' => Cart::content()->count()
+            ];
+            return \response()->json($data);
+        } else {
+            $data = [
+                'type' => 2,
+                'message' => 'Tạm thời hết hàng',
                 'total' => Cart::content()->count()
             ];
             return \response()->json($data);
@@ -63,17 +71,27 @@ class CartController extends Controller
         return view('shopping.checkout');
     }
 
-    public function updateCart(Request $request, $rowId)
+    public function updateCart(Request $request, $rowId, $id)
     {
+        $product = $this->productService->findById($id);
         $quantity = $request->qty;
-        Cart::update($rowId, $quantity);
-
-        $data = [
-            'item' => Cart::get($rowId),
-            'total' => Cart::subtotal(),
-            'totalProduct' => (Cart::get($rowId)->qty) * (Cart::get($rowId)->price),
-            'quantityProduct' => Cart::get($rowId)->options->quantityProduct
-        ];
-        return response()->json($data);
+        if ($quantity <= $product->quantity) {
+            Cart::update($rowId, $quantity);
+            $data = [
+                'type' => 1,
+                'item' => Cart::get($rowId),
+                'total' => Cart::subtotal(),
+                'totalProduct' => (Cart::get($rowId)->qty) * (Cart::get($rowId)->price),
+                'quantityProduct' => Cart::get($rowId)->options->quantityProduct,
+                'message' => "Cập nhật thành công"
+            ];
+            return response()->json($data);
+        } else {
+            $data = [
+                'type' => 2,
+                'message' => "Vượt số lượng kho hàng, bạn nhập <= $product->quantity"
+            ];
+            return response()->json($data);
+        }
     }
 }

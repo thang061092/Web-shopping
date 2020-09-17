@@ -8,4 +8,5 @@ interface Status
 {
     const ACTIVE = 'active';
     const BLOCK = 'block';
+    const DEFAULT = 0;
 }
