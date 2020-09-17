@@ -40,19 +40,22 @@
                 <tr>
                     <th>#</th>
                     <th>Sản phẩm</th>
-                    <th>Giá tiền</th>
+                    <th>Giá gốc</th>
+                    <th>Giá mua</th>
+                    <th>Mã giảm </th>
                     <th>Đặt mua</th>
-                    <th>Tồn kho</th>
+
                     <th>Hình ảnh</th>
                 </tr>
                 </thead>
                 @foreach($details as $key => $detail)
                     <tr>
                         <td>{{++$key}}</td>
-                        <td>{{\Illuminate\Support\Str::limit($detail->product->name,30)}}</td>
-                        <td><span class="text-danger">{{number_format($detail->product->price)}}/sản phẩm</span></td>
+                        <td class="text-success">{{\Illuminate\Support\Str::limit($detail->product->name,30)}}</td>
+                        <td><span class="text-danger">{{number_format($detail->product->price).' VND'}}/sản phẩm</span></td>
+                        <td><span class="text-danger">{{number_format($detail->price).' VND'}}/sản phẩm</span></td>
+                        <td><span class="text-danger">{{$detail->codeSale.' %'}}</span></td>
                         <td>{{$detail->quantityProduct}}</td>
-                        <td>{{$detail->product->quantity}}</td>
                         <td><img src="{{asset('storage/'.$detail->product->image)}}" style="width: 100px"></td>
                     </tr>
                 @endforeach

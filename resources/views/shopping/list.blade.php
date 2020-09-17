@@ -1,3 +1,8 @@
+<style>
+    .price-sale-code {
+        text-decoration: line-through;
+    }
+</style>
 @extends('home.master')
 @section('description')
     <div class="top_catagory_area section-padding-80 clearfix">
@@ -72,11 +77,22 @@
                                     <a href="{{route('products.show',$product->id)}}" class="link">
                                         <h6>{{$product->name}} <p class="text-success">->Xem chi tiết</p></h6>
                                     </a>
-                                    <h6 class="product-price">Giá tiền: <p
-                                            class="text-danger">{{number_format($product->price)}} VND </p></h6>
+                                    @if($product->codeSale ==0)
+                                        <h6 class="product-price">Giá tiền: <p
+                                                class="text-danger">{{number_format($product->price)}} VND </p></h6>
+                                    @else
+                                        <h6 class="product-price">Giá cũ : <p
+                                                class="text-secondary price-sale-code">{{number_format($product->price)}}
+                                                VND </p></h6>
+                                        <h6 class="product-price">Giá khuyến mại
+                                            <div class="text-danger">({{$product->codeSale.'%'}})</div>
+                                            <p
+                                                class="text-danger">{{number_format(($product->price) - (($product->price/100)*($product->codeSale)))}}
+                                                VND </p></h6>
+                                    @endif
                                     <div>
                                         @if($product->quantity == 0)
-                                            <h6 class="text-primary">Hết hàng</h6>
+                                            <h6 class="text-primary">Tạm hết hàng</h6>
                                         @else
                                             <h6 class="text-primary">Còn hàng</h6>
                                         @endif
@@ -85,7 +101,8 @@
                                         <div class="add-to-cart-btn">
                                             <button data-id="{{$product->id}}"
                                                     class="btn essence-btn add-cart">Thêm
-                                                vào giỏ hàng</button>
+                                                vào giỏ hàng
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -111,8 +128,19 @@
                                     <a href="{{route('products.show',$product->id)}}" class="link">
                                         <h6>{{$product->name}} <p class="text-success">->Xem chi tiết</p></h6>
                                     </a>
-                                    <h6 class="product-price">Giá tiền: <p
-                                            class="text-danger">{{number_format($product->price)}} VND </p></h6>
+                                    @if($product->codeSale ==0)
+                                        <h6 class="product-price">Giá tiền: <p
+                                                class="text-danger">{{number_format($product->price)}} VND </p></h6>
+                                    @else
+                                        <h6 class="product-price">Giá cũ : <p
+                                                class="text-secondary price-sale-code">{{number_format($product->price)}}
+                                                VND </p></h6>
+                                        <h6 class="product-price">Giá khuyến mại
+                                            <div class="text-danger">({{$product->codeSale.'%'}})</div>
+                                            <p
+                                                class="text-danger">{{number_format(($product->price) - (($product->price/100)*($product->codeSale)))}}
+                                                VND </p></h6>
+                                    @endif
                                     <div>
                                         @if($product->quantity == 0)
                                             <h6 class="text-secondary">Hết hàng</h6>
@@ -123,8 +151,9 @@
                                     <div class="hover-content">
                                         <div class="add-to-cart-btn">
                                             <button data-id="{{$product->id}}"
-                                               class="btn essence-btn add-cart">Thêm
-                                                vào giỏ hàng</button>
+                                                    class="btn essence-btn add-cart">Thêm
+                                                vào giỏ hàng
+                                            </button>
                                         </div>
                                     </div>
                                 </div>

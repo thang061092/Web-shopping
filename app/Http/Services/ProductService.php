@@ -109,4 +109,10 @@ class ProductService
         $product->status = Status::ACTIVE;
         $this->productRepo->save($product);
     }
+
+    public function changeSale($product, $request)
+    {
+        $product->codeSale = $request->code;
+        $this->productRepo->save($product);
+    }
 }

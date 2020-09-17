@@ -23,20 +23,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea4dedc1-6e89-4ef2-be74-67f3218f3896" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Status.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_16_213048_add_colum_to_product.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/products/listBlock.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_17_084122_add_colum_to_table_details.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_17_084259_add_colum_to_table_product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Repositories/ProductRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repositories/ProductRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Services/CustomerService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Services/CustomerService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Services/ProductService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Services/ProductService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/jquery/my.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/jquery/my.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/bills/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/bills/detail.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/products/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/shopping/category-show-product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shopping/category-show-product.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/shopping/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shopping/detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/shopping/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shopping/search.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/shopping/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shopping/list.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +185,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tienngay/sandbox_cpanel" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
@@ -259,6 +255,8 @@
       <workItem from="1600219861175" duration="222000" />
       <workItem from="1600225509534" duration="1047000" />
       <workItem from="1600266597329" duration="3300000" />
+      <workItem from="1600269987894" duration="419000" />
+      <workItem from="1600306809110" duration="5517000" />
     </task>
     <servers />
   </component>
@@ -305,10 +303,10 @@
     </state>
     <state x="554" y="224" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1599810927190" />
     <state x="693" y="281" width="524" height="490" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1046@0.0.1920.1046" timestamp="1597419895570" />
-    <state x="594" y="224" width="424" height="490" key="FileChooserDialogImpl" timestamp="1600220079851">
+    <state x="594" y="224" width="424" height="490" key="FileChooserDialogImpl" timestamp="1600307218116">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="594" y="224" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1600220079851" />
+    <state x="594" y="224" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1600307218116" />
     <state x="743" y="281" width="424" height="490" key="FileChooserDialogImpl/0.0.1920.1046@0.0.1920.1046" timestamp="1597579783693" />
     <state width="1870" height="271" key="GridCell.Tab.0.bottom" timestamp="1597381838719">
       <screen x="0" y="0" width="1920" height="1046" />
@@ -340,9 +338,10 @@
       <screen x="0" y="0" width="1920" height="1046" />
     </state>
     <state x="441" y="158" width="1037" height="736" key="SettingsEditor/0.0.1920.1046@0.0.1920.1046" timestamp="1597195150719" />
-    <state x="624" y="237" key="run.anything.popup" timestamp="1597247514628">
-      <screen x="0" y="0" width="1920" height="1046" />
+    <state x="499" y="189" key="run.anything.popup" timestamp="1600308404130">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
+    <state x="499" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1600308404130" />
     <state x="624" y="237" key="run.anything.popup/0.0.1920.1046@0.0.1920.1046" timestamp="1597247514628" />
     <state x="623" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1597368298971">
       <screen x="0" y="0" width="1920" height="1046" />

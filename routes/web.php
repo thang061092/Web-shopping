@@ -46,6 +46,7 @@ Route::middleware('auth')->group(function () {
         Route::get('block-product/{id}', 'ProductController@blockProduct')->name('products.block');
         Route::get('list-block', 'ProductController@getProductBlock')->name('products.listBlock');
         Route::get('active-product/{id}', 'ProductController@activeProduct')->name('products.active');
+        Route::get('change-sale/{id}', 'ProductController@changeSale')->name('products.sale');
 
     });
 

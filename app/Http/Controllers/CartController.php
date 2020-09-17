@@ -28,16 +28,17 @@ class CartController extends Controller
             Cart::add(['id' => $product->id,
                 'name' => $product->name,
                 'qty' => 1,
-                'price' => $product->price,
+                'price' => $product->price - (($product->price / 100) * ($product->codeSale)),
                 'weight' => 0,
                 'options' => ['image' => $product->image,
                     'desc' => $product->desc,
-                    'quantityProduct' => $product->quantity
+                    'quantityProduct' => $product->quantity,
+                    'codeSale' => $product->codeSale
                 ],
             ]);
             $data = [
                 'status' => 'thanh cong',
-                'message'=>'Thêm sản phẩm vào giỏ hàng thành công ',
+                'message' => 'Thêm sản phẩm vào giỏ hàng thành công ',
                 'total' => Cart::content()->count()
             ];
             return \response()->json($data);
@@ -52,7 +53,7 @@ class CartController extends Controller
             'total' => Cart::content()->count(),
             'result' => Cart::subtotal(),
             'status' => 'thanh cong',
-            'message'=>'Xóa sản phẩm thành công ',
+            'message' => 'Xóa sản phẩm thành công ',
         ];
         return \response()->json($data);
     }

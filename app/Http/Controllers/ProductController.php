@@ -118,4 +118,12 @@ class ProductController extends Controller
         return redirect()->route('products.index');
     }
 
+    public function changeSale(Request $request, $id)
+    {
+        $product = $this->productService->findById($id);
+        $this->productService->changeSale($product, $request);
+        toastr()->success('Cập nhật thành công ');
+        return redirect()->route('products.index');
+    }
+
 }

@@ -49,6 +49,8 @@ class CustomerService
             $detail->bill_id = $bill->id;
             $detail->product_id = $item->id;
             $detail->quantityProduct = $item->qty;
+            $detail->codeSale= $item->options->codeSale;
+            $detail->price= $item->price;
             $this->detailRepo->save($detail);
         }
     }

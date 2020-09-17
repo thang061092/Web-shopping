@@ -31,7 +31,8 @@
                     <th scope="col">#</th>
                     <th scope="col">Hình ảnh</th>
                     <th scope="col">Tên sản phẩm</th>
-                    <th scope="col">Giá tiền</th>
+                    <th scope="col">Giá gốc</th>
+                    <th scope="col">Mã giảm giá</th>
                     <th scope="col">Mô tả</th>
                     <th scope="col">Số lượng</th>
                     <th scope="col"></th>
@@ -54,6 +55,9 @@
                             </td>
                             <td>{{$product->name}}</td>
                             <td>{{number_format($product->price)}}</td>
+                            <form method="get" action="{{route('products.sale',$product->id)}}">
+                                <td><input type="number" value="{{$product->codeSale }}" onchange="this.form.submit()" name="code"></td>
+                            </form>
                             <td>{!! \Illuminate\Support\Str::limit($product->desc,300,' ......') !!}</td>
                             <td>{{$product->quantity}}</td>
                             <td>
@@ -61,7 +65,8 @@
                                         class="fas fa-edit"></i></a>
                             </td>
                             <td>
-                                <a class="btn btn-danger" href="{{route('products.block',$product->id)}}"><i class="fas fa-trash"></i> </a>
+                                <a class="btn btn-danger" href="{{route('products.block',$product->id)}}"><i
+                                        class="fas fa-trash"></i> </a>
                             </td>
                         </tr>
                     @endforeach
