@@ -17,7 +17,9 @@ $(document).ready(function () {
                     $('#total-price-cart').html('<strong>' + result.total.toLocaleString() + ' VNĐ' + '</strong>')
                     toastr.success(result.message)
                 } else {
-                    toastr.error(result.message);
+                    console.log(result.quantity)
+                    $('.update-product-cart').val(result.quantity)
+                    toastr.error(result.message)
                 }
 
             },

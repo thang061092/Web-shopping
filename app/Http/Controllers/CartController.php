@@ -89,7 +89,8 @@ class CartController extends Controller
         } else {
             $data = [
                 'type' => 2,
-                'message' => "Vượt số lượng kho hàng, bạn nhập <= $product->quantity"
+                'message' => "Vượt số lượng kho hàng, bạn nhập <= $product->quantity",
+                'quantity' => $product->quantity
             ];
             return response()->json($data);
         }
