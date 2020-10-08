@@ -2,6 +2,7 @@
 @section('description')
     <div class="card container-fluid pt-5 pb-5">
         <div class="card-body">
+            <h5>Hiển thị ({{$quantity}}) kết quả.</h5>
             <table class="table table-striped">
                 <thead class="table-dark">
                 <tr>

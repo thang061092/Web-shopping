@@ -9,21 +9,6 @@
                 <li class="breadcrumb-item active">Danh sách hóa đơn</li>
             </ol>
         </div>
-        <form action="{{route('bills.status')}}" method="get">
-            @csrf
-            <div class="col-12 col-md-12 pt-3">
-                <div class="row">
-                    <div class="col-12 col-md-2 ml-2">
-                        <select name="status" class="form-control" onchange="this.form.submit()">
-                            <option value="">Bộ lọc</option>
-                            @foreach($statuses as $key => $status)
-                                <option value="{{$status}}">{{$status}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </form>
         <div class="card-body">
             <h5>Hiển thị ({{$quantity}}) kết quả.</h5>
             <table class="table table-striped">
@@ -34,7 +19,8 @@
                     <th scope="col">Tổng tiền</th>
                     <th scope="col">Ghi chú</th>
                     <th scope="col">Trạng thái</th>
-                    <th scope="col">Thời gian tạo </th>
+                    <th scope="col">Thời gian tạo</th>
+                    <th scope="col"></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -45,13 +31,19 @@
                 @else
 
                     @foreach($bills as $key => $bill)
-                        <tr>
+                        <tr class="@if($bill->unread ===1) bg-gradient-warning @else bg-gradient-light @endif"
+                            onclick="read({{$bill->id}})">
                             <th>{{++$key}}</th>
                             <td><a href="{{route('bills.show',$bill->id)}}">{{$bill->customer->name}}</a></td>
                             <td>{{$bill->totalPrice}}</td>
                             <td>{!! $bill->note !!}</td>
                             <td>{{$bill->status}}</td>
                             <td>{{$bill->created_at}}</td>
+                            <td>@if($bill->unread == 1)
+                                    Chưa đọc
+                                @else
+                                    Đã đọc
+                                @endif</td>
                         </tr>
                     @endforeach
                 @endif
@@ -60,5 +52,21 @@
             {{ $bills->appends(request()->query())}}
         </div>
     </div>
+    <script>
+        let origin = location.origin
+
+        function read(id) {
+            console.log(id)
+            $.ajax({
+                url: origin + '/bills/unread/' + id,
+                method: "GET",
+                dataType: "json",
+                success: function () {
+
+                }
+            })
+        }
+    </script>
 @endsection
+
 

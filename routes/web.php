@@ -22,8 +22,8 @@ Route::prefix('/')->group(function () {
     Route::get('/cart-show', 'CartController@showCart')->name('carts.show');
     Route::get('/cart-destroy/{id}', 'CartController@destroyIdCart')->name('carts.destroy');
     Route::get('/cart-checkout', 'CartController@checkoutCart')->name('carts.checkout');
-    Route::post('cart-payment', 'BillController@payment')->name('carts.payment');
-    Route::get('cart-update/{rowId}/{id}', 'CartController@updateCart')->name('carts.update');
+    Route::post('/cart-payment', 'BillController@payment')->name('carts.payment');
+    Route::get('/cart-update/{rowId}/{id}', 'CartController@updateCart')->name('carts.update');
     Route::get('/search', 'ProductController@searchHome')->name('products.search');
     Route::get('/category-show/{id}', 'CategoryController@show')->name('categories.show');
 });
@@ -43,11 +43,12 @@ Route::middleware('auth')->group(function () {
         Route::get('/search-product', 'ProductController@searchProduct')->name('products.searchProduct');
         Route::get('/edit/{id}', 'ProductController@edit')->name('products.edit');
         Route::post('/edit/{id}', 'ProductController@update')->name('products.update');
-        Route::get('block-product/{id}', 'ProductController@blockProduct')->name('products.block');
-        Route::get('list-block', 'ProductController@getProductBlock')->name('products.listBlock');
-        Route::get('active-product/{id}', 'ProductController@activeProduct')->name('products.active');
-        Route::get('change-sale/{id}', 'ProductController@changeSale')->name('products.sale');
-
+        Route::get('/block-product/{id}', 'ProductController@blockProduct')->name('products.block');
+        Route::get('/list-block', 'ProductController@getProductBlock')->name('products.listBlock');
+        Route::get('/active-product/{id}', 'ProductController@activeProduct')->name('products.active');
+        Route::get('/change-sale/{id}', 'ProductController@changeSale')->name('products.sale');
+        Route::get('/log-product/{id}', 'LogProductController@detailProduct')->name('products.logList');
+        Route::get('/detail/{id}', 'ProductController@detail')->name('products.detail');
     });
 
     Route::prefix('bills')->group(function () {
@@ -55,6 +56,8 @@ Route::middleware('auth')->group(function () {
         Route::get('/show-bill/{id}', 'BillController@show')->name('bills.show');
         Route::get('/update-bill/{id}', 'BillController@update')->name('bills.update');
         Route::get('/fitter-status', 'BillController@fitterStatus')->name('bills.status');
+        Route::get('/list-waiting', 'BillController@listWaiting')->name('bills.waiting');
+        Route::get('/unread/{id}', 'BillController@updateReadBill')->name('bills.read');
     });
 
     Route::prefix('customers')->group(function () {
@@ -66,6 +69,6 @@ Route::middleware('auth')->group(function () {
 });
 
 
-
+Route::get('/test', 'MailController@test');
 
 

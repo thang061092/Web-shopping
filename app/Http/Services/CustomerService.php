@@ -59,4 +59,9 @@ class CustomerService
     {
         return $this->customerRepo->getAll();
     }
+
+    public function countGetAll()
+    {
+        return $this->customerRepo->countGetAll();
+    }
 }

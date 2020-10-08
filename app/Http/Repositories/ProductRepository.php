@@ -22,6 +22,11 @@ class ProductRepository
         return $this->productModel->where('status', status::ACTIVE)->paginate(5);
     }
 
+    public function countGetAll()
+    {
+        return $this->productModel->where('status', status::ACTIVE)->count();
+    }
+
     public function save($product)
     {
         $product->save();
@@ -52,9 +57,19 @@ class ProductRepository
         return $this->productModel->where('name', 'LIKE', '%' . $keyword . '%')->where('status', Status::ACTIVE)->paginate(5);
     }
 
+    public function countSearch($keyword)
+    {
+        return $this->productModel->where('name', 'LIKE', '%' . $keyword . '%')->where('status', Status::ACTIVE)->count();
+    }
+
     public function searchHome($keyword)
     {
         return $this->productModel->where('name', 'LIKE', '%' . $keyword . '%')->where('status', Status::ACTIVE)->paginate(5);
+    }
+
+    public function countSearchHome($keyword)
+    {
+        return $this->productModel->where('name', 'LIKE', '%' . $keyword . '%')->where('status', Status::ACTIVE)->count();
     }
 
     public function filterCategory($category)
@@ -62,9 +77,20 @@ class ProductRepository
         return $this->productModel->where('category_id', $category)->where('status', Status::ACTIVE)->paginate(5);
     }
 
+    public function countFilterCategory($category)
+    {
+        return $this->productModel->where('category_id', $category)->where('status', Status::ACTIVE)->count();
+    }
+
     public function getProductBlock()
     {
         return $this->productModel->where('status', status::BLOCK)->paginate(5);
     }
+
+    public function count()
+    {
+        return $this->productModel->count();
+    }
+
 
 }

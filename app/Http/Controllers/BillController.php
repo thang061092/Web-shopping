@@ -41,7 +41,10 @@ class BillController extends Controller
     {
         $statuses = Major::STATUSES;
         $bills = $this->billService->getAll();
-        return view('bills.list', compact('bills', 'statuses'));
+        $quantity = $this->billService->countGetAll();
+        $billss = $this->billService->billWaiting();
+        $countBill = $this->billService->countBillWaiting();
+        return view('bills.list', compact('bills', 'statuses', 'quantity', 'billss', 'countBill'));
     }
 
     public function show($id)
@@ -49,7 +52,9 @@ class BillController extends Controller
         $bill = $this->billService->findById($id);
         $details = $this->detailService->find($id);
         $contracts = $this->contractService->getById($id);
-        return view('bills.detail', compact('bill', 'details','contracts'));
+        $billss = $this->billService->billWaiting();
+        $countBill = $this->billService->countBillWaiting();
+        return view('bills.detail', compact('bill', 'details', 'contracts', 'billss', 'countBill'));
     }
 
     public function update(Request $request, $id)
@@ -61,6 +66,27 @@ class BillController extends Controller
     {
         $statuses = Major::STATUSES;
         $bills = $this->billService->fitterStatus($request);
-        return view('bills.list', compact('bills', 'statuses'));
+        $quantity = $this->billService->countFitterStatus($request);
+        $billss = $this->billService->billWaiting();
+        $countBill = $this->billService->countBillWaiting();
+        return view('bills.list', compact('bills', 'statuses', 'quantity', 'billss', 'countBill'));
+    }
+
+    public function listWaiting()
+    {
+        $bills = $this->billService->listWaiting();
+        $billss = $this->billService->billWaiting();
+        $quantity = $this->billService->countListWaiting();
+        $countBill = $this->billService->countBillWaiting();
+        return view('bills.listWaiting', compact('billss', 'bills', 'quantity', 'countBill'));
+    }
+
+    public function updateReadBill($id)
+    {
+        $this->billService->updateReadBill($id);
+        $data = [
+            'status' => 'thanh cong'
+        ];
+        return response()->json($data);
     }
 }

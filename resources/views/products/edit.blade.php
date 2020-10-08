@@ -31,7 +31,7 @@
                 </div>
                 <div class="form-group">
                     <label>Loại sản phẩm:</label>
-                    <select class="form-control" name="cate">
+                    <select class="form-control" name="cate" >
                         <option value="">Chọn loại sản phẩm:</option>
                         @foreach($categories as $key => $category)
                             <option @if($category->id=== $product->category_id) selected

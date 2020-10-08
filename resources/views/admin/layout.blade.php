@@ -21,6 +21,8 @@
     <script src="{{asset('js/jquery/my.js')}}"></script>
     <!-- Custom styles for this template-->
     <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
+    <link href="{{asset('js/noti.css')}}" rel="stylesheet">
+    <link href="{{asset('ajax/admin.js')}}" rel="stylesheet">
     <title>Toastr.js</title>
     @toastr_css
 </head>
@@ -96,7 +98,8 @@
                     @csrf
                     <div class="input-group">
                         <input type="text" class="form-control bg-light border-0 small" placeholder="Tìm kiếm sản phẩm"
-                               aria-label="Search" aria-describedby="basic-addon2" name="searchProduct" onchange="this.form.submit()">
+                               aria-label="Search" aria-describedby="basic-addon2" name="searchProduct"
+                               onchange="this.form.submit()">
                         <div class="input-group-append">
                             <button class="btn btn-primary" type="button">
                                 <i class="fas fa-search fa-sm"></i>
@@ -131,6 +134,34 @@
                             </form>
                         </div>
                     </li>
+                    <li class="nav-item avatar dropdown">
+                        <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-5"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge badge-danger ml-2">({{$countBill}})</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
+                             aria-labelledby="navbarDropdownMenuLink-5">
+                            @foreach($billss as $bill)
+                                <div
+                                    class="text-center @if($bill->unread ===1) bg-gradient-warning @else bg-gradient-light @endif"
+                                    onclick="read({{$bill->id}})">
+                                    <a href="{{route('bills.show',$bill->id)}}">
+                                        <h6>
+                                            {{$bill->customer->name}}- {{$bill->customer->address}}
+                                        </h6>
+                                        {{$bill->status}}
+                                        <br>{{$bill->created_at}}
+                                    </a>
+                                </div>
+                                <hr>
+                            @endforeach
+                            <a class="dropdown-item waves-effect waves-light" href="{{route('bills.waiting')}}">
+                                <h5 class="text-info">Xem tất cả ({{$countBill}})</h5>
+                            </a>
+                        </div>
+
+                    </li>
                     <!-- Nav Item - User Information -->
                     <li class="nav-item dropdown no-arrow">
                         <div class="nav-item dropdown float-right">
@@ -152,9 +183,7 @@
                             </div>
                         </div>
                     </li>
-
                 </ul>
-
             </nav>
             <!-- End of Topbar -->
 
@@ -229,6 +258,21 @@
 <script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
 <script>
     CKEDITOR.replace('editor');
+</script>
+<script>
+    let origin = location.origin
+
+    function read(id) {
+        console.log(id)
+        $.ajax({
+            url: origin + '/bills/unread/' + id,
+            method: "GET",
+            dataType: "json",
+            success: function () {
+
+            }
+        })
+    }
 </script>
 @jquery
 @toastr_js

@@ -44,6 +44,7 @@
                     <th>#</th>
                     <th>Người cập nhật</th>
                     <th>Ghi chú</th>
+                    <th>Trạng thái cập nhật </th>
                     <th>Thời gian cập nhật</th>
                 </tr>
                 </thead>
@@ -52,6 +53,7 @@
                         <td>{{++$key}}</td>
                         <td>{{$contract->create_by}}</td>
                         <td>{{$contract->note}}</td>
+                        <td>{{$contract->status}}</td>
                         <td>{{$contract->created_at}}</td>
                     </tr>
                 @endforeach

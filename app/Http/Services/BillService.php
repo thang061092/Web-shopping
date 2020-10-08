@@ -32,6 +32,11 @@ class BillService
         return $this->billRepo->getAll();
     }
 
+    public function countGetAll()
+    {
+        return $this->billRepo->countGetAll();
+    }
+
     public function findById($id)
     {
         return $this->billRepo->findById($id);
@@ -45,6 +50,7 @@ class BillService
         $contract = new Contract();
         $contract->bill_id = $id;
         $contract->note = $request->note;
+        $contract->status = $request->status;
         $contract->create_by = Auth::user()->email;
         $this->contractRepo->save($contract);
         $sumProductBill = 0;
@@ -86,5 +92,38 @@ class BillService
     {
         $status = $request->status;
         return $this->billRepo->fitterStatus($status);
+    }
+
+    public function countFitterStatus($request)
+    {
+        $status = $request->status;
+        return $this->billRepo->countFitterStatus($status);
+    }
+
+    public function billWaiting()
+    {
+        return $this->billRepo->billWaiting();
+    }
+
+    public function countBillWaiting()
+    {
+        return $this->billRepo->countBillWaiting();
+    }
+
+    public function listWaiting()
+    {
+        return $this->billRepo->listWaiting();
+    }
+
+    public function countListWaiting()
+    {
+        return $this->billRepo->countListWaiting();
+    }
+
+    public function updateReadBill($id)
+    {
+        $bill = $this->billRepo->findById($id);
+        $bill->unread = 2;
+        $this->billRepo->save($bill);
     }
 }

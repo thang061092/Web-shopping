@@ -46,7 +46,7 @@
                     </tr>
                 @else
                     @foreach($products as $key => $product)
-                        <tr>
+                        <tr id="product-block-{{$product->id}}">
                             <th>{{++$key}}</th>
                             <td>
                                 <img src="{{asset('storage/'.$product->image)}}" style="width: 100px">
@@ -56,8 +56,8 @@
                             <td>{!! \Illuminate\Support\Str::limit($product->desc,300,' ......') !!}</td>
                             <td>{{$product->quantity}}</td>
                             <td>
-                                <a class="btn btn-success" href="{{route('products.active',$product->id)}}"><i
-                                        class="fas fa-window-restore"></i></a>
+                                <button class="btn btn-success update-status-product" data-id="{{$product->id}}"><i
+                                        class="fas fa-window-restore"></i></button>
                             </td>
                         </tr>
                     @endforeach
@@ -69,7 +69,25 @@
 
     </div>
 
+<script>
+    $(document).ready(function () {
+        $(".update-status-product").on('click', function () {
+            let id = $(this).attr('data-id')
+            let origin = window.location.origin
+            $.ajax({
+                url: origin + '/products/active-product/' + id,
+                method: "GET",
+                dataType: "json",
+                success: function (data) {
+                    console.log(data)
+                    $('#product-block-' + id).remove()
+                    toastr.success(data.message);
+                }
+            })
+        })
+    })
 
+</script>
 
 
 @endsection

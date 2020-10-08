@@ -20,6 +20,11 @@ class CustomerRepository
         return $this->customerModel->paginate(10);
     }
 
+    public function countGetAll()
+    {
+        return $this->customerModel->count();
+    }
+
     public function findById($id)
     {
         return $this->customerModel->findOrFail($id);
